@@ -1,0 +1,28 @@
+header{
+  background-color: red;
+  resize: none;
+  overflow:hidden;
+}
+
+#map{
+  resize: none;
+  overflow:hidden;
+}
+
+#parcel_content{
+  width:100%;
+  background-color: #8a2be2;
+  resize: none;
+   overflow:hidden;
+}
+
+html, body {
+  height:100%;
+  background-color: #adff2f;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  resize: none;
+  overflow:hidden;
+}

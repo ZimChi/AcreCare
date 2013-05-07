@@ -1,3 +1,6 @@
 AcreCare::Application.routes.draw do
-  root :to => "home#index"
+
+  resources :parcels
+
+  root :to => "parcels#index"
 end

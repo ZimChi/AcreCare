@@ -6,14 +6,15 @@
       %meta{:content => content_for?(:description) ? yield(:description) : "Acre+Care", :name => "description"}
         = stylesheet_link_tag "application", :media => "all"
         = javascript_include_tag "application"
+        = javascript_include_tag "parcels"
+        = javascript_include_tag "leaflet"
+        = stylesheet_link_tag "leaflet"
+        /[if lte IE 8]
+          = stylesheet_link_tag "leaflet.ie.css"
         = csrf_meta_tags
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
-    #container.container
-      %header
-        = render 'layouts/navigation'
-        = render 'layouts/messages'
-      #main{:role => "main"}
-        = yield
-      %footer
+    #main{:role => "main"}
+      = yield
+    %footer
     / ! end of #container

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @parcel.title
+%p
+  %b Icon:
+  = @parcel.icon
+%p
+  %b Description:
+  = @parcel.description
+
+= link_to 'Edit', edit_parcel_path(@parcel)
+\|
+= link_to 'Back', parcels_path
