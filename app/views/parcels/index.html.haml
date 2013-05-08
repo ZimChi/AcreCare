@@ -1,32 +1,4 @@
-%header
-  = render 'layouts/navigation'
-  = render 'layouts/messages'
-
 #map
-#parcel_content
-  parcel content
+= content_tag "div", id: "parcel_content", data: {parcels: @parcels} do end
 
-%table
-  %tr
-    %th Title
-    %th Icon
-    %th Description
-    %th
-    %th
-    %th
-
-  - @parcels.each do |parcel|
-    %tr
-      %td= parcel.title
-      %td= parcel.icon
-      %td= parcel.description
-      %td= link_to 'Show', parcel
-      %td= link_to 'Edit', edit_parcel_path(parcel)
-      %td= link_to 'Destroy', parcel, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-
-
-= link_to 'New Parcel', new_parcel_path
 
