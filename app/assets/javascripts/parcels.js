@@ -2,8 +2,8 @@
 $(document).ready(function() {
 
   $('header').css({'height': 0.1*$('body').height()});
-  $('#map').css({'height': $('body').height() - $('header').height() - 200});
-  $('#parcel_content').css({'height': $('body').height() - $('header').height() - 200});
+  $('#map').css({'height': $('body').height() - $('header').height()});
+  $('#parcel_content').css({'height': 0});
 
   var map = L.map('map').setView([51.505, -0.09], 13);
 
@@ -17,7 +17,10 @@ $(document).ready(function() {
   marker.bindPopup("<center><b>"+parcels.title+"</b></center>"+parcels.description).openPopup();
 
   marker.on('click', function(e){
-    $("#parcel_content").load("/parcels/9");
+    $('#map').css({'height': $('body').height() - $('header').height() - 200});
+    $('#parcel_content').css({'height': $('body').height() - $('header').height() - 200});
+
+    $("#parcel_content").load("/parcels/"+parcels.id);
   });
 
 });
