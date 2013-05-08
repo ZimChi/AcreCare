@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 
   $('header').css({'height': 0.1*$('body').height()});
