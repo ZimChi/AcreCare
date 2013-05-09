@@ -21,9 +21,9 @@ $(document).ready(function() {
 
     marker.on('click', function(e){
       $("#parcel_content").load("/parcels/"+parcel.id);
-      $("#parcel_content").css({'height': $('body').height() *.3});
+      $("#parcel_content").css({'height': 50});
       $('#map').css({'height': $('body').height() - $('header').height() - $('#parcel_content').height()});
-
+        var map = L.map('map').setView([-11.8, -70.802307], 5);
     });
 
     markers.push(marker);

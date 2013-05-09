@@ -1,5 +1,11 @@
-class ThanksController < ApplicationController
+class PagesController < ApplicationController
   def index
+  end
+
+  def about
+    respond_to do |format|
+      format.html { render :layout => false }
+    end
   end
 
   def download

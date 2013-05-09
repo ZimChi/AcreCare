@@ -1,0 +1,27 @@
+#about{
+
+  position:relative ;
+  display:block;
+
+  #left-column{
+   width:45%;
+   font-size: 8px ;
+   padding:10px;
+   line-height: 12px ;
+   img{
+     height:50% ;
+   }
+  }
+
+  #right-column{
+    img{
+         height:50% ;
+       }
+   float:right ;
+   width:45%;
+   font-size: 8px ;
+   padding:10px;
+   line-height: 12px ;
+  }
+
+}
