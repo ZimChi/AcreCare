@@ -5,9 +5,9 @@ $(document).ready(function() {
 
   var map = L.map('map').setView([51.505, -0.09], 12);
 
-  L.tileLayer('http://{s}.tile.cloudmade.com/f57ba02c8691486fabf0baf62ac158c3/997/256/{z}/{x}/{y}.png', {
+  L.tileLayer('http://a.tiles.mapbox.com/v3/lxbarth.map-n8gsdqn4/{z}/{x}/{y}.png', {
     //attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-    maxZoom:18
+   // maxZoom:18
   }).addTo(map);
 
   var parcels = $('#parcel_content').data('parcels');
