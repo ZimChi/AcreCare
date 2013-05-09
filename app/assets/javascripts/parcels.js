@@ -3,7 +3,7 @@ $(document).ready(function() {
   $('#map').css({'height': $('body').height() - $('header').height()});
   $('#parcel_content').css({'height': 0});
 
-  var map = L.map('map').setView([-11.679135, -70.802307], 12);
+  var map = L.map('map').setView([-11.8, -70.802307], 7);
 
   L.tileLayer('http://a.tiles.mapbox.com/v3/lxbarth.map-n8gsdqn4/{z}/{x}/{y}.png', {
     //attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
