@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-  $('header').css({'height': 0.1*$('body').height()});
   $('#map').css({'height': $('body').height() - $('header').height()});
   $('#parcel_content').css({'height': 0});
 
@@ -11,16 +10,25 @@ $(document).ready(function() {
     maxZoom: 18
   }).addTo(map);
 
-  var parcels = $('#parcel_content').data('parcels')[0]; //each
-  var marker = L.marker([51.5, -0.09]).addTo(map);
-  marker.bindPopup("<center><b>"+parcels.title+"</b></center>"+parcels.description).openPopup();
+  var parcels = $('#parcel_content').data('parcels');
 
-  marker.on('click', function(e){
-    $('#map').css({'height': $('body').height() - $('header').height() - 200});
-    $('#parcel_content').css({'height': $('body').height() - $('header').height() - 200});
+  var markers = [] ;
 
-    $("#parcel_content").load("/parcels/"+parcels.id);
+  $.each(parcels, function(index, parcel) {
+
+    var marker = L.marker([51.5+.01*index, -0.09]).addTo(map);
+    //marker.bindPopup("<center><b>"+parcel.title+"</b></center>"+parcel.description).openPopup();
+
+    marker.on('click', function(e){
+      $("#parcel_content").load("/parcels/"+parcel.id);
+      $("#parcel_content").css({'height': $('body').height() *.3});
+      $('#map').css({'height': $('body').height() - $('header').height() - $('#parcel_content').height()});
+
+    });
+
+    markers.push(marker);
   });
+
 
 });
 
