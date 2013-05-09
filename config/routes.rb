@@ -6,5 +6,7 @@ AcreCare::Application.routes.draw do
 
   match "/thanks" => "thanks#index"
 
+  match "/certificate" => "thanks#download"
+
 
 end

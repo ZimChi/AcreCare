@@ -4,7 +4,6 @@ class CreateParcels < ActiveRecord::Migration
       t.string :title
       t.string :icon
       t.string :description
-
       t.timestamps
     end
   end

@@ -65,7 +65,8 @@ class ParcelsController < ApplicationController
     @parcel = Parcel.find(params[:id])
 
     respond_to do |format|
-      if @parcel.update_attributes(params[:parcels])
+
+      if @parcel.update_attributes(params[:parcel])
         format.html { redirect_to @parcel, notice: 'Parcel was successfully updated.' }
         format.json { head :no_content }
       else

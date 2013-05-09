@@ -1,11 +1,12 @@
-%script{"data-amount" => "40","data-button" => "donate","data-currency" => "USD","data-env" => "sandbox","data-name" => "Protect "+@parcel.title+" for 40 Years","data-shipping" => "0","data-tax" => "0","data-callback"=> "http://gentle-earth-9200.herokuapp.com/thanks",:src => "paypal-button.min.js?merchant=chielo@coshx.com"}
-
+%script{"data-amount" => "40","data-button" => "donate","data-currency" => "USD","data-env" => "sandbox","data-name" => "Protect "+@parcel.title+" for 40 Years","data-shipping" => "0","data-tax" => "0","data-callback"=> "http://gentle-earth-9200.herokuapp.com/thanks",:src => "../paypal-button.min.js?merchant=chielo@coshx.com"}
 %p#notice= notice
-
-%p
-  %b Title:
-  = @parcel.title
+%b Title:
+= @parcel.title
 /= @parcel.icon
-%p
-  %b Description:
-  = @parcel.description
+%br
+%b Description:
+= @parcel.description
+%br
+=@parcel.x
+=@parcel.y
+

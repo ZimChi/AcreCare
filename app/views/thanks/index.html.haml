@@ -4,6 +4,8 @@
       Thank You
     #certificate
       %center
-        =image_tag("certificate.jpg")
-    .fb-like{"data-href" => "http://www.amazonaid.org/", "data-send" => "false", "data-show-faces" => "false", "data-width" => "800"}
-    %a.twitter-share-button{"data-size" => "large", "data-text" => "I just donated $40 to help AmazonAid preserve the natural beauty of the rainforest", "data-url" => "http://www.amazonaid.org/", :href => "https://twitter.com/share"} Tweet
+        = link_to image_tag("certificate.jpg") , certificate_path ;
+        %br
+        .fb-like{"data-href" => "http://www.amazonaid.org/", "data-send" => "false", "data-show-faces" => "true", "data-width" => "0"}
+        %br
+        %a.twitter-share-button{"data-size" => "large", "data-text" => "I just donated $40 to help AmazonAid preserve the natural beauty of the rainforest", "data-url" => "http://www.amazonaid.org/", :href => "https://twitter.com/share"} Tweet
