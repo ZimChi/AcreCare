@@ -16,19 +16,18 @@
 
 window.addEventListener('orientationchange', handleOrientation, false);
 function handleOrientation() {
+    location.reload();
 if (orientation == 0) {
-  alert('portraitMode')
+
+  //portraitMode
 }
 else if (orientation == 90) {
-    alert('landscapeMode')
   //landscapeMode
 }
 else if (orientation == -90) {
-    alert('landscapeMode')
   //landscapeMode
 }
 else if (orientation == 180) {
-    alert('portraitMode')
   //portraitMode
 }
 else {
