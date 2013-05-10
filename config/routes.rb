@@ -4,8 +4,8 @@ AcreCare::Application.routes.draw do
 
   root :to => "parcels#index"
 
-  match "/thanks" => "pages#index"
-  match "/certificate" => "pages#download"
+  match "/thanks" => "pages#thanks"
+  match "/certificate" => "pages#certificate"
   match "/about" =>"pages#about"
 
 end

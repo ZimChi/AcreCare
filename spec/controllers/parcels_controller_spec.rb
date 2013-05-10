@@ -33,7 +33,7 @@ describe ParcelsController do
   describe "GET index" do
     it "assigns all parcels as @parcels" do
       parcel = Parcel.create! valid_attributes
-      get :index, {}, valid_session
+      get :thanks, {}, valid_session
       assigns(:parcels).should eq([parcel])
     end
   end

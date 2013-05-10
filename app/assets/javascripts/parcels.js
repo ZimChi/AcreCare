@@ -1,3 +1,8 @@
+
+var activeparcel = {
+   id: null
+}
+
 $(document).ready(function() {
 
   $('#map').css({'height': $('body').height() - $('header').height()});
@@ -19,8 +24,9 @@ $(document).ready(function() {
     var marker = L.marker([parcel.x, parcel.y]).addTo(map);
     //marker.bindPopup("<center><b>"+parcel.title+"</b></center>"+parcel.description).openPopup();
 
-    marker.on('click', function(e){
-      if($("#parcel_content").css('height')=='0px'){
+    marker.on('mousedown', function(e){
+      if($("#parcel_content").css('height')=='0px' || activeparcel.id != parcel.id){
+        activeparcel.id = parcel.id ;
         $("#parcel_content").load("/parcels/"+parcel.id);
         $("#parcel_content").css({'height': 150});
         $('#map').css({'height': $('body').height() - $('header').height() - $('#parcel_content').height()});

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def index
+  def thanks
   end
 
   def about
@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     end
   end
 
-  def download
+  def certificate
     send_file 'public/certificate.jpg',  :filename=>"photo.jpg", :disposition => 'attachment', :x_sendfile=>true
   end
 
