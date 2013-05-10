@@ -14,11 +14,20 @@
 //= require jquery_ujs
 //= require_tree .
 
+
+
+window.onload=function(){
+  $("#parcel_content").css({'height': 0});
+  $('#map').css({'height': $('body').height() - $('header').height()});
+};
+
 window.addEventListener('orientationchange', handleOrientation, false);
 function handleOrientation() {
-    location.reload();
-if (orientation == 0) {
 
+location.reload();
+
+
+if (orientation == 0) {
   //portraitMode
 }
 else if (orientation == 90) {

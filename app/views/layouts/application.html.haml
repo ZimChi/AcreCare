@@ -1,8 +1,8 @@
 !!!
 %html
   %head
+    %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-
       %title= content_for?(:title) ? yield(:title) : "Acre+Care"
       %meta{:content => content_for?(:description) ? yield(:description) : "Acre+Care", :name => "description"}
         = stylesheet_link_tag "application", :media => "all"

@@ -1,27 +1,35 @@
 #about{
-
-  position:relative ;
-  display:block;
-
   #left-column{
-   width:45%;
-   font-size: 8px ;
-   padding:10px;
-   line-height: 12px ;
-   img{
-     height:50% ;
-   }
-  }
-
-  #right-column{
+    background-color:whitesmoke ;
+    width:50%;
+    height:100%;
+    float:left ;
+    #text{
+      font-size: 8px ;
+      line-height: 12px ;
+      padding:10px ;
+    }
     img{
-         height:50% ;
-       }
-   float:right ;
-   width:45%;
-   font-size: 8px ;
-   padding:10px;
-   line-height: 12px ;
+      padding:20px;
+      height: auto;
+      width: 60%;
+    }
   }
+  #right-column{
+    background:whitesmoke ;
+    width:50%;
+    height:100%;
+    float:right ;
+    #text{
+      font-size: 8px ;
+      line-height: 12px ;
+      padding:10px ;
+    }
+    img{
+      padding:20px;
+      width: 60%;
+      height: auto;
 
+    }
+  }
 }

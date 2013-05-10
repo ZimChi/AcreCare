@@ -1,7 +1,9 @@
 var colorbox = {up:false}
 $(document).ready(function(){
+
   $.colorbox({href:'/about', transition:'none', scrolling: "false", width: $('body').width(), height: $('body').height(), opacity:1,
     onComplete: function() {
+      $('#cboxClose').remove();
       $('#about').css('height','0px');
     }
   });
