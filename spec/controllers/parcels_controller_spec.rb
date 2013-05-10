@@ -33,7 +33,7 @@ describe ParcelsController do
   describe "GET index" do
     it "assigns all parcels as @parcels" do
       parcel = Parcel.create! valid_attributes
-      get :thanks, {}, valid_session
+      get :index, {}, valid_session
       assigns(:parcels).should eq([parcel])
     end
   end
@@ -42,14 +42,14 @@ describe ParcelsController do
     it "assigns the requested parcel as @parcel" do
       parcel = Parcel.create! valid_attributes
       get :show, {:id => parcel.to_param}, valid_session
-      assigns(:parcels).should eq(parcel)
+      assigns(:parcel).should eq(parcel)
     end
   end
 
   describe "GET new" do
     it "assigns a new parcel as @parcel" do
       get :new, {}, valid_session
-      assigns(:parcels).should be_a_new(Parcel)
+      assigns(:parcel).should be_a_new(Parcel)
     end
   end
 
@@ -57,7 +57,7 @@ describe ParcelsController do
     it "assigns the requested parcel as @parcel" do
       parcel = Parcel.create! valid_attributes
       get :edit, {:id => parcel.to_param}, valid_session
-      assigns(:parcels).should eq(parcel)
+      assigns(:parcel).should eq(parcel)
     end
   end
 
@@ -70,9 +70,9 @@ describe ParcelsController do
       end
 
       it "assigns a newly created parcel as @parcel" do
-        post :create, {:parcels => valid_attributes}, valid_session
-        assigns(:parcels).should be_a(Parcel)
-        assigns(:parcels).should be_persisted
+        post :create, {:parcel => valid_attributes}, valid_session
+        assigns(:parcel).should be_a(Parcel)
+        assigns(:parcel).should be_persisted
       end
 
       it "redirects to the created parcel" do
@@ -85,8 +85,8 @@ describe ParcelsController do
       it "assigns a newly created but unsaved parcel as @parcel" do
         # Trigger the behavior that occurs when invalid params are submitted
         Parcel.any_instance.stub(:save).and_return(false)
-        post :create, {:parcels => { "title" => "invalid value" }}, valid_session
-        assigns(:parcels).should be_a_new(Parcel)
+        post :create, {:parcel => { "title" => "invalid value" }}, valid_session
+        assigns(:parcel).should be_a_new(Parcel)
       end
 
       it "re-renders the 'new' template" do
@@ -107,13 +107,13 @@ describe ParcelsController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Parcel.any_instance.should_receive(:update_attributes).with({ "title" => "MyString" })
-        put :update, {:id => parcel.to_param, :parcels => { "title" => "MyString" }}, valid_session
+        put :update, {:id => parcel.to_param, :parcel => { "title" => "MyString" }}, valid_session
       end
 
       it "assigns the requested parcel as @parcel" do
         parcel = Parcel.create! valid_attributes
         put :update, {:id => parcel.to_param, :parcels => valid_attributes}, valid_session
-        assigns(:parcels).should eq(parcel)
+        assigns(:parcel).should eq(parcel)
       end
 
       it "redirects to the parcel" do
@@ -128,8 +128,8 @@ describe ParcelsController do
         parcel = Parcel.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Parcel.any_instance.stub(:save).and_return(false)
-        put :update, {:id => parcel.to_param, :parcels => { "title" => "invalid value" }}, valid_session
-        assigns(:parcels).should eq(parcel)
+        put :update, {:id => parcel.to_param, :parcel => { "title" => "invalid value" }}, valid_session
+        assigns(:parcel).should eq(parcel)
       end
 
       it "re-renders the 'edit' template" do

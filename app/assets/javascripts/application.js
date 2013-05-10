@@ -14,3 +14,23 @@
 //= require jquery_ujs
 //= require_tree .
 
+window.addEventListener('orientationchange', handleOrientation, false);
+function handleOrientation() {
+if (orientation == 0) {
+  alert('portraitMode')
+}
+else if (orientation == 90) {
+    alert('landscapeMode')
+  //landscapeMode
+}
+else if (orientation == -90) {
+    alert('landscapeMode')
+  //landscapeMode
+}
+else if (orientation == 180) {
+    alert('portraitMode')
+  //portraitMode
+}
+else {
+}
+}

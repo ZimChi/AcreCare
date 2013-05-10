@@ -5,5 +5,7 @@ FactoryGirl.define do
     title "MyString"
     icon "MyString"
     description "MyString"
+    x 0.0
+    y 0.0
   end
 end
