@@ -1,14 +1,12 @@
-
-
 #map{
   overflow:hidden;
   .leaflet-bottom.leaflet-right{
-    display:none ;
+    display:none;
   }
 }
 
 .leaflet-top.leaflet-left{
-display:none ;
+display:none;
 }
 
 #donate_button{
@@ -21,5 +19,13 @@ display:none ;
 #parcel_content{
   background-color: #f5f5f5;
   overflow:hidden;
+}
+
+#parcel{
+  margin-left:auto;
+  margin-right:auto;
+  width:90%;
+  padding:10px;
+  background-color:whitesmoke;
 }
 

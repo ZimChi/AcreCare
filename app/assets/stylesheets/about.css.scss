@@ -1,13 +1,16 @@
 #about{
+  display:block;
+
   #left-column{
-    background-color:whitesmoke ;
+    background-color:whitesmoke;
     width:50%;
     height:100%;
-    float:left ;
+    float:left;
+
     #text{
-      font-size: 8px ;
-      line-height: 12px ;
-      padding:10px ;
+      font-size: 8px;
+      line-height: 12px;
+      padding:20px;
     }
     img{
       padding:20px;
@@ -16,14 +19,15 @@
     }
   }
   #right-column{
-    background:whitesmoke ;
+    background:whitesmoke;
     width:50%;
     height:100%;
-    float:right ;
+    float:right;
+
     #text{
-      font-size: 8px ;
-      line-height: 12px ;
-      padding:10px ;
+      font-size: 8px;
+      line-height: 12px;
+      padding:20px;
     }
     img{
       padding:20px;

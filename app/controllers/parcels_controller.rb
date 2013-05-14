@@ -16,7 +16,7 @@ class ParcelsController < ApplicationController
     @parcel = Parcel.find(params[:id])
 
     respond_to do |format|
-      format.html { render :layout => false }
+      format.html #{ render :layout => false }
       format.json { render json: @parcel }
     end
   end
