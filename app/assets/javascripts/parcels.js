@@ -1,5 +1,28 @@
 $(document).ready(function(){
 
+    $('#sharable').hide() ;
+
+    $('#share_button').click(function(){
+        $('#sharable').show() ;
+    })
+    $('#close_share_button').click(function(){
+            $('#sharable').hide() ;
+        })
+
+  $('.cert').on('click', function(e){
+      $('#light').css({'display' : 'block'});
+      $('#fade').css({'display' : 'block'});
+
+      $.fileDownload('/certificate',{
+        successCallback: function () {
+          $('#light').css({'display' : 'none'});
+          $('#fade').css({'display' : 'none'});
+        }
+
+      });
+      return false;
+  });
+
   $('#map').css({'height': $('body').height() - $('header').height()});
   $('#parcel_content').css({'height': 0});
   

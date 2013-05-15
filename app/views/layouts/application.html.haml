@@ -5,12 +5,16 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
       %title= content_for?(:title) ? yield(:title) : "Acre+Care"
       %meta{:content => content_for?(:description) ? yield(:description) : "Acre+Care", :name => "description"}
-        = stylesheet_link_tag "application", :media => "all"
         = javascript_include_tag "application"
         = javascript_include_tag "parcels"
         = javascript_include_tag "leaflet"
-        = javascript_include_tag "jquery.colorbox.js"
+        = javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
+        = javascript_include_tag "jquery.fileDownload-min.js"
+
+        = stylesheet_link_tag "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"
         = stylesheet_link_tag "leaflet"
+        = stylesheet_link_tag "application", :media => "all"
+
         /[if lte IE 8]
           = stylesheet_link_tag "leaflet.ie.css"
         = csrf_meta_tags

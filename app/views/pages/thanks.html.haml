@@ -1,11 +1,43 @@
 #thanks
-  #container
-    #thankyoumessage
-      Thank You
-    #certificate
-      %center
-        = link_to image_tag("certificate.jpg") , certificate_path ;
+  %p
+  #light.white_content
+    =image_tag '4.gif', :id => 'spinner'
+  #fade.black_overlay
+    #text
+      Generating PDF
+
+  #thankyoumessage
+    Thank You
+  #certificate
+    #content
+      %br
+      = link_to image_tag("cert.png", :class=>'cert'), '#' ;
+      %br
+      = link_to 'download certificate',  '#', :class=>'cert';
+      %br
+  #share
+    %center
+      %br
+      %br
+      %br
+      %br
+      %button{:type => "button", :id => "share_button"} Share
+      #sharable
         %br
-        .fb-like{"data-href" => "http://www.amazonaid.org/", "data-send" => "false", "data-show-faces" => "true", "data-width" => "0"}
         %br
-        %a.twitter-share-button{"data-size" => "large", "data-text" => "I just donated $40 to help AmazonAid preserve the natural beauty of the rainforest", "data-url" => "http://www.amazonaid.org/", :href => "https://twitter.com/share"} Tweet
+        %br
+        %br
+        .fb-like{"data-href" => "http://www.amazonaid.org/", "data-send" => "false", "data-show-faces" => "false", "data-width" => "0"}
+        %br
+        %br
+        %br
+        %br
+        %a.twitter-share-button{"data-size" => "small",  "data-count"=>"none", "data-text" => "I just donated $40 to help AmazonAid preserve the natural beauty of the rainforest","data-url" => "http://www.amazonaid.org/", :href => "https://twitter.com/share"}
+        %br
+        %br
+        %br
+        %br
+        %button{:type => "button", :id => "close_share_button"} Close
+
+
+

@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   def thanks
   end
 
@@ -9,7 +10,14 @@ class PagesController < ApplicationController
   end
 
   def certificate
-    send_file 'public/certificate.jpg',  :filename=>"photo.jpg", :disposition => 'attachment', :x_sendfile=>true
+    cookies[:fileDownload] = {
+      :value => true,
+      :path => '/'
+    }
+    pdf = Prawn::Document.new(:page_layout => :landscape)
+    pdf.image Rails.application.assets['cert.png'], :at => [-50,600], :scale => 0.55
+    send_data pdf.render, :filename => "AAFCertificate.pdf", :type => "application/pdf"
   end
+
 
 end
