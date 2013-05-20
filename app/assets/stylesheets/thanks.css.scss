@@ -10,12 +10,13 @@
       font-weight:bold;
       color: #262515;
       text-align: center;
-      padding:40px;
+
+
     }
 
     #certificate{
       background-color: whitesmoke ;
-      width:50% ;
+      width:60% ;
       margin-right:auto;
       margin-left:auto;
 
@@ -38,17 +39,26 @@
 
 
       #sharable{
+        #custom-tweet-button a {
+        display: block;
+        padding: 2px 5px 2px 20px;
+        background: url('generalfund.png') left center no-repeat;
+        border: 1px solid #ccc;
+        }
+      a{
+      display:block ;
+      }
 
       text-align: center ;
         position: absolute;
-        top: 80%;
+        top: 60%;
         width:100% ;
+        height:50% ;
         padding-top: 2%;
         padding-bottom: 20%;
 
+
       background-color:#331a00 ;
-      top:20% ;
-      height:100%;
       -moz-opacity: 0.99;
       opacity:.99;
       filter: alpha(opacity=99);

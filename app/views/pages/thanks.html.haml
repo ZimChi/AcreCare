@@ -1,3 +1,6 @@
+<style type="text/css" media="screen">
+
+</style>
 #thanks
   %p
   #light.white_content
@@ -18,25 +21,26 @@
   #share
     %center
       %br
-      %br
-      %br
-      %br
       %button{:type => "button", :id => "share_button"} Share
       #sharable
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+        <a class="addthis_button_linkedin"></a>
+        <a class="addthis_button_google_plusone_share"></a>
+        <a class="addthis_button_pinterest_share"></a>
+
+        </div>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=undefined"></script>
+        <!-- AddThis Button END -->
+
+        <div id="custom-tweet-button">
+        /<a href="http://twitter.com/share?url=http%3A%2F%2Fdev.twitter.com%2Fpages%2Ftweet-button" target="_blank">+</a>
+        </div>
+        %br
+        %a.twitter-share-button{"data-size" => "small",  "data-count"=>"none", "data-text" => "I just donated $40 to name one acre of Rainforest for protection and conservation","data-url" => "http://www.amazonaid.org/", :href => "https://twitter.com/share"}
         %br
         %br
-        %br
-        %br
-        .fb-like{"data-href" => "http://www.amazonaid.org/", "data-send" => "false", "data-show-faces" => "false", "data-width" => "0"}
-        %br
-        %br
-        %br
-        %br
-        %a.twitter-share-button{"data-size" => "small",  "data-count"=>"none", "data-text" => "I just donated $40 to help AmazonAid preserve the natural beauty of the rainforest","data-url" => "http://www.amazonaid.org/", :href => "https://twitter.com/share"}
-        %br
-        %br
-        %br
-        %br
+        .fb-like{"data-href" => "http://www.amazonaid.org/", "data-layout"=>"button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
         %button{:type => "button", :id => "close_share_button"} Close
 
 
