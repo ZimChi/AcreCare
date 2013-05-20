@@ -1,15 +1,6 @@
 $(document).ready(function(){
 
-    $('#sharable').hide() ;
-
-    $('#share_button').click(function(){
-        $('#sharable').show() ;
-    })
-    $('#close_share_button').click(function(){
-            $('#sharable').hide() ;
-        })
-
-  $('.cert').on('click', function(e){
+   $('.cert').on('click', function(e){
       $('#light').css({'display' : 'block'});
       $('#fade').css({'display' : 'block'});
 
@@ -24,14 +15,13 @@ $(document).ready(function(){
   });
 
   $('#map').css({'height': $('body').height() - $('header').height()});
-  $('#parcel_content').css({'height': 0});
-  
-  var center = [-12.8, -70.802307],
+
+  var center = [-11.9, -70.55],
       southWest = new L.LatLng(-18.64, -79.89),
       northEast = new L.LatLng(-2, -56),
       bounds = new L.LatLngBounds(southWest, northEast),
-      initial_zoom = 7; if($('body').height()<300) initial_zoom = 6;
-  
+      initial_zoom = 8 ; if($('body').height()<300) initial_zoom = 7;
+
   var map = L.map('map', {
     center: center,
     zoom: initial_zoom,
@@ -40,32 +30,36 @@ $(document).ready(function(){
 
   L.tileLayer('http://a.tiles.mapbox.com/v3/lxbarth.map-n8gsdqn4/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-    maxZoom:12,
-    minZoom:5
+    maxZoom:8,
+    minZoom:6
   }).addTo(map);
 
   var parcels = $('#parcel_content').data('parcels');
   var markers = [];
 
   $.each(parcels, function(index, parcel){
-  
+
+    var iconsize = .8 ;
+
     var markerIcon = L.icon({
       iconUrl: '/assets/'+parcel.icon,
       shadowUrl: '/assets/pin.png' ,
-      iconSize:     [29*0.5, 28*0.5], // size of the icon
-      shadowSize:   [60*0.5, 88*0.5], // size of the shadow
-      iconAnchor:   [15*0.5, 62*0.5], // point of the icon which will correspond to marker's location
-      shadowAnchor: [30*0.5, 80*0.5]  // the same for the shadow
+      iconSize:     [43.5*iconsize, 42*iconsize], // size of the icon
+      shadowSize:   [60*iconsize, 88*iconsize], // size of the shadow
+      iconAnchor:   [21*iconsize, 68.2*iconsize], // point of the icon which will correspond to marker's location
+      shadowAnchor: [30*iconsize, 80*iconsize]  // the same for the shadow
       //popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
 
     var marker = L.marker([parcel.x, parcel.y],{icon: markerIcon}).addTo(map);
 
     marker.on('click', function(e){
+
       window.location = "/parcels/"+parcel.id;
+
     });
   
-    marker.dragging.enable();
+    //marker.dragging.enable();
       
     marker.on('dragend', function (e){
       var coords = e.target.getLatLng();

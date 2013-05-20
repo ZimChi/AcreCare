@@ -6,11 +6,9 @@
       %title= content_for?(:title) ? yield(:title) : "Acre+Care"
       %meta{:content => content_for?(:description) ? yield(:description) : "Acre+Care", :name => "description"}
         = javascript_include_tag "application"
-        = javascript_include_tag "parcels"
         = javascript_include_tag "leaflet"
         = javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
         = javascript_include_tag "jquery.fileDownload-min.js"
-
         = stylesheet_link_tag "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"
         = stylesheet_link_tag "leaflet"
         = stylesheet_link_tag "application", :media => "all"

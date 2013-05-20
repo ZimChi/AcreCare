@@ -14,12 +14,15 @@
 //= require jquery_ujs
 //= require_tree .
 
+
 window.addEventListener('orientationchange', handleOrientation, false);
 
 function handleOrientation(){
-  location.reload();
-  if (orientation == 0){} //portraitMode
-  else if (orientation == 90){} //landscapeMode
-  else if (orientation == -90){} //landscapeMode
-  else if (orientation == 180){} //portraitMode
+  if(window.location.pathname == '/'){
+    window.location.reload();
+    if (orientation == 0){} //portraitMode
+    else if (orientation == 90){} //landscapeMode
+    else if (orientation == -90){} //landscapeMode
+    else if (orientation == 180){} //portraitMode
+  }
 }
