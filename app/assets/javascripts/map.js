@@ -1,18 +1,6 @@
 $(document).ready(function(){
 
-   $('.cert').on('click', function(e){
-      $('#light').css({'display' : 'block'});
-      $('#fade').css({'display' : 'block'});
 
-      $.fileDownload('/certificate',{
-        successCallback: function () {
-          $('#light').css({'display' : 'none'});
-          $('#fade').css({'display' : 'none'});
-        }
-
-      });
-      return false;
-  });
 
   $('#map').css({'height': $('body').height() - $('header').height()});
 
@@ -20,7 +8,7 @@ $(document).ready(function(){
       southWest = new L.LatLng(-18.64, -79.89),
       northEast = new L.LatLng(-2, -56),
       bounds = new L.LatLngBounds(southWest, northEast),
-      initial_zoom = 8 ; if($('body').height()<300) initial_zoom = 7;
+      initial_zoom = 8 ; if($('body').height()<600) initial_zoom = 7;
 
   var map = L.map('map', {
     center: center,
