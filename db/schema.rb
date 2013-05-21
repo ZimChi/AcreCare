@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509123840) do
+ActiveRecord::Schema.define(:version => 20130521141520) do
 
   create_table "maps", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130509123840) do
     t.datetime "updated_at",  :null => false
     t.float    "x"
     t.float    "y"
+    t.string   "imagename"
   end
 
 end

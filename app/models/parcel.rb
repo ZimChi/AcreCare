@@ -1,3 +1,3 @@
 class Parcel < ActiveRecord::Base
-  attr_accessible :description, :icon, :title, :x, :y
+  attr_accessible :description, :icon, :title, :x, :y, :imagename
 end

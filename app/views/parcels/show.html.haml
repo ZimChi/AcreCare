@@ -11,7 +11,7 @@
   %br
   = @parcel.description
   /%p#notice= notice
-  =image_tag 'amazon.jpg', width:'100%'
+  =image_tag @parcel.imagename, width:'100%'
   %br
   =link_to_function "Back", "history.back()"
   %br
