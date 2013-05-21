@@ -17,6 +17,7 @@ class PagesController < ApplicationController
     pdf = Prawn::Document.new(:page_layout => :landscape)
     pdf.image Rails.application.assets['cert.png'], :at => [-50,600], :scale => 0.55
     send_data pdf.render, :filename => "AAFCertificate.pdf", :type => "application/pdf"
+
   end
 
 

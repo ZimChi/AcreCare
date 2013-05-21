@@ -10,7 +10,7 @@ display:none;
 }
 
 #donate_button{
-  float:right;
+ // float:right;
   button.paypal-button.large{
     color: #613e13;
   }
@@ -28,6 +28,17 @@ display:none;
 
   padding:10px;
   background-color:whitesmoke;
-  overflow: "auto"
+  overflow: "auto" ;
+
+  img{
+    height: 50% ;
+    width:auto;
+  }
+
+  #title{
+    color: #613e13 ;
+    font-size:20px ;
+    font-weight: bold ;
+  }
 }
 

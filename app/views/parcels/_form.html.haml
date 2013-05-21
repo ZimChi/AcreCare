@@ -3,13 +3,20 @@
 
   .form-inputs
     = f.input :title
-    = f.input :icon
-    = f.input :imagename
     = f.input :description
+    %br
+    %br
     latitude
     = f.input :x
     longitude
     = f.input :y
-
+    %br
+    %br
+    Icon name for map
+    = f.input :icon
+    Image name for show page
+    = f.input :imagename
+    %br
+    %br
   .form-actions
     = f.button :submit

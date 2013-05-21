@@ -1,15 +1,18 @@
 #parcel
+  #title
+    #{@parcel.title}
+  /= "Donate $40 to name one acre of rain forest for conservation and protection."
+  #{@parcel.description}
+  %br
+  %br
+  %br
   #donate_button
     %script{"data-amount" => "40","data-button" => "donate","data-currency" => "USD","data-env" => "sandbox","data-name" => "Protect "+@parcel.title+" for 40 Years","data-shipping" => "0","data-tax" => "0","data-callback"=> "http://gentle-earth-9200.herokuapp.com/thanks",:src => "../paypal-button.min.js?merchant=chielo@coshx.com"}
-  = "Donate $40 to name one acre of rain forest for conservation and protection #{@parcel.title}."
-  %br
-  %br
-  %b
-    Regional Information
+
   %br
   = "Regional Cordinates: #{@parcel.x} #{@parcel.y}"
   %br
-  = @parcel.description
+  /= @parcel.description
   /%p#notice= notice
   =image_tag @parcel.imagename, width:'100%'
   %br
