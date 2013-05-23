@@ -37,6 +37,7 @@ $(document).ready(function(){
   var parcels = $('#parcel_content').data('parcels');
   var markers = [];
 
+
   $.each(parcels, function(index, parcel){
 
     var iconsize = .8 ;
@@ -70,5 +71,6 @@ $(document).ready(function(){
 
     markers.push(marker);
   });
+
 });
 

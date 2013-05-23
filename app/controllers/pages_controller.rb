@@ -1,12 +1,17 @@
 class PagesController < ApplicationController
 
   def thanks
+    Rails.logger.info params[:certificate]
   end
 
   def about
     respond_to do |format|
       format.html #{ render :layout => false }
     end
+  end
+
+  def customize_certificate
+
   end
 
   def certificate

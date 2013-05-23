@@ -1,0 +1,11 @@
+#certificateform
+  #form
+    #text
+      Certificate Customization Details
+      = simple_form_for :certificate, :url => {:action => 'certificate', :controller => 'pages'} do |f|
+        .form-inputs
+          = f.input :title, :placeholder => 'Name of Certificate Holder', :label => false
+          = f.input :description, :placeholder => 'Name of Acre', :label => false
+          = f.button :submit, :class=> 'generate_btn'
+
+
