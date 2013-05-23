@@ -7,16 +7,20 @@
       Generating Certificate PDF
   #thankyoumessage
     Thank You
-  #certificate
-    #content
-      = link_to image_tag("cert.png", :class=>'cert'), '#' ;
-      %br
-      /= link_to 'download certificate',  '#', :class=>'cert';
-      %br
-    #share
-      %center
-        %a.twitter-share-button{"data-size" => "small",  "data-count"=>"none", "data-text" => "I just donated $40 to name one acre of Rainforest for protection and conservation","data-url" => "http://www.amazonaid.org/", :href => "https://twitter.com/share"}
-        .fb-like{"data-href" => "http://www.amazonaid.org/", "data-layout"=>"button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
+  #certificateform
+    #form
+      #text
+        Personal Certificate Detail
+        = simple_form_for :certificate do |f|
+          .form-inputs
+            = f.input :title, :placeholder => 'Name of Certificate Holder', :label => false
+            = f.input :description, :placeholder => 'Name of Acre', :label => false
+            = f.button :submit, 'Download Parcel Certificate', :class=> 'generate_btn'
+
+  #share
+    %center
+      %a.twitter-share-button{"data-size" => "small",  "data-count"=>"none", "data-text" => "I just donated $40 to name one acre of Rainforest for protection and conservation","data-url" => "http://www.amazonaid.org/", :href => "https://twitter.com/share"}
+      .fb-like{"data-href" => "http://www.amazonaid.org/", "data-layout"=>"button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
 
 
 

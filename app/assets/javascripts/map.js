@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.cert').on('click', function(e){
+    $('.generate_btn').on('click', function(e){
           $('#light').css({'display' : 'block'});
           $('#fade').css({'display' : 'block'});
 
@@ -7,6 +7,9 @@ $(document).ready(function(){
             successCallback: function () {
               $('#light').css({'display' : 'none'});
               $('#fade').css({'display' : 'none'});
+            },
+            failCallback: function () {
+                alert('download script failed, please try again')
             }
 
           });
