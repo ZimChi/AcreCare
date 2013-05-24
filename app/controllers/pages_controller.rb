@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def thanks
-
+    @parcel = Parcel.find_by_id(cookies[:parcel_id])
   end
 
   def about
@@ -20,48 +20,49 @@ class PagesController < ApplicationController
       :path => '/'
     }
 
-    #pdf = Prawn::Document.new #(:page_layout => :landscape)
-    #pdf.image Rails.application.assets['certificate.png'], :at => [-36,756]
-    #send_data pdf.render, :filename => "AAFCertificate.pdf", :type => "application/pdf"
+    name = params[:certificate_holder_name].split(' ').map {|w| w.capitalize }.join(' ')
+    if name ==""
+      name = "Anonymously"
+    end
 
+    @parcel = Parcel.find_by_id(cookies[:parcel_id])
 
-    promise_text = "THIS CERTIFIES THAT ONE ACRE OF AMAZON RAIN FOREST AT THE CORDINATES BELOW HAS BEEN NAMED"
-
-
-    holder_name = params[:certificate_holder_name]
     pdf = Prawn::Document.new(:template => "#{Rails.root}/app/assets/images/certificate_template.pdf")
     pdf.fill_color "FFFFFF"
 
-    pdf.bounding_box([-2,195], :width=>300, :height=>250) do
-      #pdf.text "Thanks To", :size => 7, :leading => 0, :align => :center
+    pdf.bounding_box([-2,180], :width=>300, :height=>50) do
+       text = "THIS CERTIFIES THAT ONE ACRE OF THE AMAZON"
+       pdf.text text, :size => 11, :leading => 0, :align => :center, :style=>:bold
     end
 
-    pdf.bounding_box([-2,185], :width=>300, :height=>250) do
-      pdf.text "ACRE CARE CERTIFICATE", :size => 16, :leading => 0, :align => :center, :style=> :bold,:font=>"Verdana"
+    pdf.bounding_box([-2,168], :width=>300, :height=>50) do
+           text = "RAIN FOREST AT THE COORDINATES BELOW"
+           pdf.text text, :size => 11, :leading => 0, :align => :center, :style=>:bold
     end
 
-    pdf.bounding_box([-2,150], :width=>300, :height=>250) do
-       pdf.text promise_text, :size => 10, :leading => 0, :align => :center
+    pdf.bounding_box([-2,154], :width=>300, :height=>50) do
+           text = "HAS BEEN NAMED"
+           pdf.text text, :size => 11, :leading => 0, :align => :center, :style=>:bold
     end
 
     pdf.bounding_box([-2,110], :width=>300, :height=>250) do
-      pdf.text params[:certificate_holder_name].split(' ').map {|w| w.capitalize }.join(' '), :size => 14, :leading => 0, :align => :center#, :style=> :italic
+       pdf.text name, :size => 16, :leading => 0, :align => :center, :style=>:bold#, :style=> :italic
     end
 
-
-    pdf.bounding_box([-2,50], :width=>300, :height=>250) do
-       pdf.text "REGION: ANDIAN CAT HABITAT", :size => 12, :leading => 0, :align => :center
-    end
-    pdf.bounding_box([-2,30], :width=>300, :height=>250) do
-       pdf.text "CORDINATES:", :size => 12, :leading => 0, :align => :center
+    pdf.bounding_box([40,72], :width=>220, :height=>250) do
+       pdf.text "In support of conservation and ecological protection of this precious region", :size => 11, :leading => 0, :align => :center
     end
 
-    pdf.bounding_box([-2,10], :width=>300, :height=>250) do
-      pdf.text "The Amazon Aid Foundation and mother earth appreciate your support and protection of this precious region", :size => 8, :leading => 0, :align => :center
+    pdf.bounding_box([-2,15], :width=>300, :height=>250) do
+       pdf.text "Region: #{@parcel.title}", :size => 10, :leading => 0, :align => :center
+    end
+
+    pdf.bounding_box([-2,0], :width=>300, :height=>250) do
+       pdf.text "Cordinates: #{@parcel.x}, #{@parcel.y}", :size => 10, :leading => 0, :align => :center
     end
 
     pdf.bounding_box([-2,-20], :width=>300, :height=>250) do
-       pdf.text "The Amazon Aid Foundation is a 501(c)(3) nonprofit organzation.", :size => 8, :leading => 0, :align => :center
+       pdf.text "The Amazon Aid Foundation is a 501(c)(3) nonprofit organization.", :size => 6, :leading => 0, :align => :center
     end
 
 

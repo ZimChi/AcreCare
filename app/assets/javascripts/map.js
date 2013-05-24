@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $('.generate_btn').on('click', function(e){
           $('#light').css({'display' : 'block'});
           $('#fade').css({'display' : 'block'});

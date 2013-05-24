@@ -6,6 +6,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'httparty'
 gem 'prawn'
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0"
