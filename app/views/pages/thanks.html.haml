@@ -10,13 +10,12 @@
   #certificateform
     #form
       #text
-        Personal Certificate Detail
+        Certificate Detail
         = simple_form_for :certificate do |f|
           .form-inputs
-            = f.input :title, :placeholder => 'Name of Certificate Holder', :label => false
-            = f.input :description, :placeholder => 'Name of Acre', :label => false
+            = f.input :title, :placeholder => 'NAME YOUR ACRE', :label => false
+            /= f.input :description, :placeholder => 'Name of Acre', :label => false
             = f.button :submit, 'Download Parcel Certificate', :class=> 'generate_btn'
-
   #share
     %center
       %a.twitter-share-button{"data-size" => "small",  "data-count"=>"none", "data-text" => "I just donated $40 to name one acre of Rainforest for protection and conservation","data-url" => "http://www.amazonaid.org/", :href => "https://twitter.com/share"}

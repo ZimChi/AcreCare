@@ -1,6 +1,7 @@
 !!!
 %html
   %head
+    %meta#authenticity-token{:content => form_authenticity_token, :name => "authenticity-token"}/
     %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
       %title= content_for?(:title) ? yield(:title) : "Acre+Care"

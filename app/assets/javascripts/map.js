@@ -3,17 +3,21 @@ $(document).ready(function(){
           $('#light').css({'display' : 'block'});
           $('#fade').css({'display' : 'block'});
 
-          $.fileDownload('/certificate',{
+       var dataString = '?&certificate_holder_name=' + $('#certificate_title').val() + '&authenticity_token='+$('#authenticity-token').attr('content');
+
+
+          $.fileDownload('/certificate'+dataString,{
             successCallback: function () {
               $('#light').css({'display' : 'none'});
               $('#fade').css({'display' : 'none'});
             },
             failCallback: function () {
-                alert('download script failed, please try again')
+                $('#light').css({'display' : 'none'});
+                $('#fade').css({'display' : 'none'});
             }
 
           });
-          return false;
+          return false ;
       });
 
 
