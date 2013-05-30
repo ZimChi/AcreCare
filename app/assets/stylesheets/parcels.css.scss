@@ -1,16 +1,5 @@
-#map{
-  overflow:hidden;
-  .leaflet-bottom.leaflet-right{
-    display:none;
-  }
-}
-
-.leaflet-top.leaflet-left{
-display:none;
-}
 
 #donate_button{
- // float:right;
   button.paypal-button.large{
     color: #613e13;
   }

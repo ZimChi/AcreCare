@@ -1,0 +1,10 @@
+#map{
+  overflow:hidden;
+  .leaflet-bottom.leaflet-right{
+    display:none;
+  }
+}
+
+.leaflet-top.leaflet-left{
+  display:none;
+}

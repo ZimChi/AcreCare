@@ -10,7 +10,7 @@
   #donate_button
     %script{"data-amount" => "40","data-name" => data_name, "data-button" => "donate","data-currency" => "USD","data-env" => "sandbox","data-shipping" => "0","data-tax" => "0",:src => "../paypal-button.min.js?merchant=chielo@coshx.com"}
   %br
-  = "Regional Cordinates: #{@parcel.x} #{@parcel.y}"
+  = "Regional Cordinates: #{@parcel.latitude}, #{@parcel.longitude }"
   %br
   /= @parcel.description
   /%p#notice= notice

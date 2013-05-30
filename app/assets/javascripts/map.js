@@ -1,27 +1,5 @@
 $(document).ready(function(){
 
-    $('.generate_btn').on('click', function(e){
-          $('#light').css({'display' : 'block'});
-          $('#fade').css({'display' : 'block'});
-
-       var dataString = '?&certificate_holder_name=' + $('#certificate_title').val() + '&authenticity_token='+$('#authenticity-token').attr('content');
-
-
-          $.fileDownload('/certificate'+dataString,{
-            successCallback: function () {
-              $('#light').css({'display' : 'none'});
-              $('#fade').css({'display' : 'none'});
-            },
-            failCallback: function () {
-                $('#light').css({'display' : 'none'});
-                $('#fade').css({'display' : 'none'});
-            }
-
-          });
-          return false ;
-      });
-
-
   $('#map').css({'height': $('body').height() - $('header').height()});
 
   var center = [-11.9, -70.55],
@@ -45,7 +23,6 @@ $(document).ready(function(){
   var parcels = $('#parcel_content').data('parcels');
   var markers = [];
 
-
   $.each(parcels, function(index, parcel){
 
     var iconsize = .8 ;
@@ -60,22 +37,20 @@ $(document).ready(function(){
       //popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
 
-    var marker = L.marker([parcel.x, parcel.y],{icon: markerIcon}).addTo(map);
-
+    var marker = L.marker([parcel.latitude, parcel.longitude],{icon: markerIcon}).addTo(map);
     marker.on('click', function(e){
-
       window.location = "/parcels/"+parcel.id;
-
     });
-  
-    //marker.dragging.enable();
-      
+
+    /* Enable draggable icons
+    marker.dragging.enable();
     marker.on('dragend', function (e){
       var coords = e.target.getLatLng();
       var lat = coords.lat;
       var lng = coords.lng;
       alert('lat: '+lat+'\nlng: '+lng);
     });
+    */
 
     markers.push(marker);
   });

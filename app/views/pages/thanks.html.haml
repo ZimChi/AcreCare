@@ -11,9 +11,9 @@
     #form
       #text
         Certificate Detail
-        = simple_form_for :certificate do |f|
+        = simple_form_for :certificate do |f|  #see certificate.js - pages#certificate
           .form-inputs
-            = f.input :title, :placeholder => 'NAME YOUR ACRE', :label => false
+            = f.input :acrename, :placeholder => 'NAME YOUR ACRE', :label => false
             = f.button :submit, 'Download Parcel Certificate', :class=> 'generate_btn'
   #share
     %center
