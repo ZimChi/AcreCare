@@ -17,8 +17,13 @@
             = f.button :submit, 'Download Parcel Certificate', :class=> 'generate_btn'
   #share
     %center
-      %a.twitter-share-button{"data-size" => "small",  "data-count"=>"none", "data-text" => "Named an acre of Amazon rain forest for protection and conservation","data-url" => "http://www.amazonaid.org/", :href => "https://twitter.com/share"}
-      .fb-like{"data-href" => "http://www.amazonaid.org/", "data-layout"=>"button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
+      #social_media_links
+        .fb-like{"data-font" => "tahoma", "data-href" => "http://www.amazonaid.org/", "data-layout" => "button_count", "data-send" => "true", "data-show-faces" => "false", "data-width" => "450"}
+        %br/
+        %a.twitter-share-button{"data-count" => "horizontal", "data-text" => "Named an acre of Amazon rain forest for protection and conservation", "data-url" => "http://www.amazonaid.org/", "data-via" => "", :href => "https://twitter.com/share"} Tweet
+        %br/
+        %g:plusone
+
 
 
 

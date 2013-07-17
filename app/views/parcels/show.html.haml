@@ -1,20 +1,33 @@
+- data_name = "Protect #{@parcel.title} for 40 years"
 #parcel
-  #title
-  #{@parcel.title}
-  %br
-  #{@parcel.description}
-  %br
-  %br
-  %br
-  - data_name = "Protect #{@parcel.title} for 40 years"
-  #donate_button
+  #donate
     %script{"data-amount" => "40","data-name" => data_name, "data-button" => "donate","data-currency" => "USD","data-env" => "sandbox","data-shipping" => "0","data-tax" => "0",:src => "../paypal-button.min.js?merchant=chielo@coshx.com"}
+    /=link_to_function "Back", "history.back()", :id=> 'button'
+
+  #title
+    =image_tag "#{@parcel.icon}"
+    #{@parcel.title}
+
+  #short_description
+    = "#{@parcel.short_description}"
+
+  #description_top
+    = "#{@parcel.short_description} #{@parcel.description}"
+
+  #image
+    -if @parcel.imagename.include? 'png' or @parcel.imagename.include? 'jpg'
+      =image_tag @parcel.imagename
+    -else
+      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "281", :mozallowfullscreen => "", :src =>  @parcel.imagename, :webkitallowfullscreen => "", :width => "500"}
+      %p
+        Squirrel Monkeys from
+        %a{:href => "http://vimeo.com/user13869091"} Amazon Aid
+        on
+        = succeed "." do
+          %a{:href => "https://vimeo.com"} Vimeo
+
+  #description_bottom
+    = "#{@parcel.description}"
+
   %br
-  = "Regional Cordinates: #{@parcel.latitude}, #{@parcel.longitude }"
-  %br
-  /= @parcel.description
-  /%p#notice= notice
-  =image_tag @parcel.imagename, width:'100%'
-  %br
-  =link_to_function "Back", "history.back()"
-  %br
+  =link_to_function "Back", "history.back()", :id=> 'button'

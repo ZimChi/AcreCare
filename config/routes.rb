@@ -9,4 +9,6 @@ AcreCare::Application.routes.draw do
   match "/about" =>"pages#about"
   match "/payment_confirmation" => "pages#payment_confirmation"
 
+  match "/donate" => "pages#donate"
+
 end

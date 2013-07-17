@@ -1,23 +1,26 @@
 !!!
-%html
+%html{:itemscope => "", :itemtype => "http://schema.org/Organization"}
   %head
     %meta#authenticity-token{:content => form_authenticity_token, :name => "authenticity-token"}/
     %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-      %title= content_for?(:title) ? yield(:title) : "Acre+Care"
-      %meta{:content => content_for?(:description) ? yield(:description) : "Acre+Care", :name => "description"}
-        = javascript_include_tag "application"
-        = javascript_include_tag "leaflet"
-        = javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
-        = javascript_include_tag "jquery.fileDownload-min.js"
-        = stylesheet_link_tag "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"
-        = stylesheet_link_tag "leaflet"
-        = stylesheet_link_tag "application", :media => "all"
+    %meta{:content => content_for?(:description) ? yield(:description) : "Acre+Care", :name => "description"}
+    %meta{:content => "Amazon Aid Foundation", :itemprop => "name"}/
+    %meta{:content => "http://amazonaid.org/wp-content/uploads/2013/02/Featured-Slider-protect-an-acre-today-960x340.jpg", :itemprop => "image"}/
 
-        /[if lte IE 8]
-          = stylesheet_link_tag "leaflet.ie.css"
-        = csrf_meta_tags
-        = yield(:head)
+    %title= content_for?(:title) ? yield(:title) : "Acre+Care"
+    %link{:href => "http://www.amazonaid.org", :rel => "canonical"}/
+    = javascript_include_tag "application"
+    = javascript_include_tag "leaflet"
+    = javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
+    = javascript_include_tag "jquery.fileDownload-min.js"
+    = stylesheet_link_tag "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"
+    = stylesheet_link_tag "leaflet"
+    = stylesheet_link_tag "application", :media => "all"
+    /[if lte IE 8]
+    = stylesheet_link_tag "leaflet.ie.css"
+    = csrf_meta_tags
+    = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
     #fb-root
     :javascript
@@ -32,6 +35,9 @@
     :javascript
       //twitter
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    //google+
+    %script{:src => "https://apis.google.com/js/plusone.js", :type => "text/javascript"}
+
     %header
       = render 'layouts/header'
       = render 'layouts/messages'
