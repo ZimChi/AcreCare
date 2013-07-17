@@ -2,23 +2,13 @@
 #parcel{
 
   background-image:url('AmazonAidBackground.jpg');
-  background-repeat:repeat-y;
-  background-repeat:repeat-x;
-
+   background-repeat:repeat-y;
+   background-repeat:repeat-x;
+   height: 100%;
 
   padding:10px;
+  padding-bottom:50px;
 
-  #image{
-    margin-top:1% ;
-    margin-bottom:1% ;
-
-    img,video{
-      display: block ;
-      margin-left:auto;
-      margin-right:auto;
-      width:90%;
-    }
-  }
 
   #cordinates{
     display: block ;
@@ -51,6 +41,21 @@
     font-size:20px ;
     font-weight: bold ;
   }
+  #image{
+
+    margin-top:1% ;
+    margin-bottom:1% ;
+
+
+    img{
+      display: block ;
+      margin-left:auto;
+      margin-right:auto;
+      width:90%;
+    }
+
+
+  }
 
 
   @media (max-width: 1000px) {
@@ -74,6 +79,8 @@
     }
   }
   @media (min-width: 1000px) {
+
+
     #description_bottom{
       display:none ;
     }

@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+  $("#image").fitVids();
   $('#map').css({'height': $('body').height() - $('header').height()});
 
   var center = [-11.9, -70.55],

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
+ruby '1.9.2'
 gem 'rails', '3.2.11'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

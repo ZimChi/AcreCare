@@ -14,20 +14,19 @@
   #description_top
     = "#{@parcel.short_description} #{@parcel.description}"
 
+
   #image
     -if @parcel.imagename.include? 'png' or @parcel.imagename.include? 'jpg'
       =image_tag @parcel.imagename
     -else
-      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "281", :mozallowfullscreen => "", :src =>  @parcel.imagename, :webkitallowfullscreen => "", :width => "500"}
-      %p
-        Squirrel Monkeys from
-        %a{:href => "http://vimeo.com/user13869091"} Amazon Aid
-        on
-        = succeed "." do
-          %a{:href => "https://vimeo.com"} Vimeo
+      %iframe{:id => "video",:allowfullscreen => "", :frameborder => "0", :mozallowfullscreen => "yes", :src =>  @parcel.imagename, :webkitallowfullscreen => "yes"}
+
 
   #description_bottom
     = "#{@parcel.description}"
 
   %br
   =link_to_function "Back", "history.back()", :id=> 'button'
+
+
+
