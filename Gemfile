@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.2'
+ruby '1.9.3'
 gem 'rails', '3.2.11'
 
 group :assets do
@@ -8,6 +8,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'newrelic_rpm'
 gem 'httparty'
 gem 'prawn'
 gem 'jquery-rails'
