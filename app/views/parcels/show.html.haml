@@ -16,7 +16,7 @@
 
 
   #image
-    -if @parcel.imagename.include? 'png' or @parcel.imagename.include? 'jpg'
+    -if @parcel.imagename.include? 'png' or @parcel.imagename.include? 'jpg' or @parcel.imagename.include? 'jpeg'
       =image_tag @parcel.imagename
     -else
       %iframe{:id => "video",:allowfullscreen => "", :frameborder => "0", :mozallowfullscreen => "yes", :src =>  @parcel.imagename, :webkitallowfullscreen => "yes"}
