@@ -29,7 +29,7 @@ module PagesHelper
         pdf.text "Region: #{@parcel.title}", :size => 10, :leading => 0, :align => :center
       end
       pdf.bounding_box([-2,0], :width=>300, :height=>250) do
-        pdf.text "Cordinates: #{@parcel.x}, #{@parcel.y}", :size => 10, :leading => 0, :align => :center
+        pdf.text "Cordinates: #{@parcel.latitude}, #{@parcel.longitude}", :size => 10, :leading => 0, :align => :center
       end
       pdf.bounding_box([-2,-20], :width=>300, :height=>250) do
         pdf.text "The Amazon Aid Foundation is a 501(c)(3) nonprofit organization.", :size => 6, :leading => 0, :align => :center
