@@ -26,7 +26,7 @@ class ParcelsController < ApplicationController
   # GET /parcels/new
   # GET /parcels/new.json
   def new
-    @parcel = Parcel.new
+    #@parcel = Parcel.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +36,13 @@ class ParcelsController < ApplicationController
 
   # GET /parcels/1/edit
   def edit
-    @parcel = Parcel.find(params[:id])
+    #@parcel = Parcel.find(params[:id])
   end
 
   # POST /parcels
   # POST /parcels.json
   def create
-    @parcel = Parcel.new(params[:parcel])
+    #@parcel = Parcel.new(params[:parcel])
 
     #Rails.logger.info "*****************"
     #Rails.logger.info @parcel.title
@@ -63,7 +63,7 @@ class ParcelsController < ApplicationController
   # PUT /parcels/1
   # PUT /parcels/1.json
   def update
-    @parcel = Parcel.find(params[:id])
+    #@parcel = Parcel.find(params[:id])
 
     respond_to do |format|
 
@@ -80,8 +80,8 @@ class ParcelsController < ApplicationController
   # DELETE /parcels/1
   # DELETE /parcels/1.json
   def destroy
-    @parcel = Parcel.find(params[:id])
-    @parcel.destroy
+    #@parcel = Parcel.find(params[:id])
+    #@parcel.destroy
 
     respond_to do |format|
       format.html { redirect_to parcels_url }
