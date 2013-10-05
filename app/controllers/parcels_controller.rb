@@ -36,7 +36,7 @@ class ParcelsController < ApplicationController
 
   # GET /parcels/1/edit
   def edit
-    #@parcel = Parcel.find(params[:id])
+    @parcel = Parcel.find(params[:id])
   end
 
   # POST /parcels
@@ -63,7 +63,7 @@ class ParcelsController < ApplicationController
   # PUT /parcels/1
   # PUT /parcels/1.json
   def update
-    #@parcel = Parcel.find(params[:id])
+    @parcel = Parcel.find(params[:id])
 
     respond_to do |format|
 

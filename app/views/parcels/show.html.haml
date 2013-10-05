@@ -1,7 +1,7 @@
-- data_name = "Protect an acre of #{@parcel.title}."
+- data_name = "Protect #{@parcel.title}."
 #parcel
   #donate
-    %script{"data-amount" => "0.01","data-name" => data_name, "data-button" => "donate","data-currency" => "USD","data-env" => "sandbox","data-shipping" => "0","data-tax" => "0",:src => "../paypal-button.min.js?merchant=payment@acrecare.org"}
+    %script{"data-amount" => "0.01","data-name" => data_name, "data-button" => "donate","data-currency" => "USD","data-env" => "www","data-shipping" => "0","data-tax" => "0",:src => "../paypal-button.min.js?merchant=acrecare@amazonaid.org"}
     /=link_to_function "Back", "history.back()", :id=> 'button'
 
   #title

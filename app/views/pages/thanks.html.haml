@@ -6,17 +6,25 @@
     #text
       Generating Certificate PDF
   #thankyoumessage
-    Thank You
+    %h1 Thank You
+  #paypalmessage
+    Your transaction has been completed, and a receipt for your donation has been emailed to you. You may log into your account at www.paypal.com/us to view details of this transaction.
+    %br
+    %br
+
+
   #certificateform
     #form
       #text
-        Certificate Detail
+        Donation Certificate Detail
         = simple_form_for :certificate do |f|  #see certificate.js - pages#certificate
           .form-inputs
             = f.input :acrename, :placeholder => 'NAME YOUR ACRE', :label => false
             = f.button :submit, 'Download Parcel Certificate', :class=> 'generate_btn'
   #share
     %center
+      %br
+      %br
       #social_media_links
         .fb-like{"data-font" => "tahoma", "data-href" => "http://www.amazonaid.org/", "data-layout" => "button_count", "data-send" => "true", "data-show-faces" => "false", "data-width" => "450"}
         %br/
