@@ -42,7 +42,7 @@ class ParcelsController < ApplicationController
   # POST /parcels
   # POST /parcels.json
   def create
-    #@parcel = Parcel.new(params[:parcel])
+    @parcel = Parcel.new(params[:parcel])
 
     #Rails.logger.info "*****************"
     #Rails.logger.info @parcel.title
