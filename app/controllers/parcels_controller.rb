@@ -26,7 +26,7 @@ class ParcelsController < ApplicationController
   # GET /parcels/new
   # GET /parcels/new.json
   def new
-    #@parcel = Parcel.new
+    @parcel = Parcel.new
 
     respond_to do |format|
       format.html # new.html.erb
