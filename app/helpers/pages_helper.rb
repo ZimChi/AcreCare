@@ -1,11 +1,8 @@
 module PagesHelper
 
-  def generate_certificate
+  def generate_certificate(name)
     @parcel = Parcel.find_by_id(cookies[:parcel_id])
-    params[:acrename].empty? ?
-            name = "Anonymously" :
-            name = params[:acrename].split(' ').map {|w| w.capitalize }.join(' ')
-    pdf = Prawn::Document.new(:template => "#{Rails.root}/app/assets/images/certificate_template.pdf")
+     pdf = Prawn::Document.new(:template => "#{Rails.root}/app/assets/images/certificate_template.pdf")
       pdf.fill_color "FFFFFF"
       pdf.bounding_box([-2,180], :width=>300, :height=>50) do
         text = "THIS CERTIFIES THAT ONE ACRE OF THE AMAZON"

@@ -196,6 +196,7 @@ DEPENDENCIES
   html2haml (>= 1.0.1)
   httparty
   jquery-rails
+  mail (~> 2.4.4)
   newrelic_rpm
   pg (>= 0.15.0)
   prawn

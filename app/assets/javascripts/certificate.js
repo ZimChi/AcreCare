@@ -1,9 +1,17 @@
 $(document).ready(function(){
+
     $('.generate_btn').on('click', function(e){
     $('#light').css({'display' : 'block'});
     $('#fade').css({'display' : 'block'});
 
-    var dataString = '?&acrename=' + $('#certificate_acrename').val() + '&authenticity_token='+$('#authenticity-token').attr('content');
+
+
+    var dataString = '?&certificate_acrename=' + $('#certificate_acrename').val()
+        +'&certificate_username='+$('#certificate_username').val()
+        +'&certificate_useremail='+$('#certificate_useremail').val()
+        +'&certificate_recipientemail='+$('#certificate_recipientemail').val()
+        +'&certificate_personalizedmessage='+$('#certificate_personalizedmessage').val()
+        + '&authenticity_token='+$('#authenticity-token').attr('content');
 
     $.fileDownload('/certificate'+dataString,{
       successCallback: function () {

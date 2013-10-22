@@ -11,26 +11,27 @@
     Your transaction has been completed, and a receipt for your donation has been emailed to you. You may log into your account at www.paypal.com/us to view details of this transaction.
     %br
     %br
-
+    #share
+      %center
+        %br
+          #social_media_links
+          .fb-like{"data-font" => "tahoma", "data-href" => "http://www.amazonaid.org/", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
+          %a.twitter-share-button{"data-count" => "horizontal", "data-text" => "Named an acre of Amazon rain forest for protection and conservation", "data-url" => "http://www.amazonaid.org/", "data-via" => "", :href => "https://twitter.com/share"} Tweet
+          %g:plusone
 
   #certificateform
     #form
       #text
-        Donation Certificate Detail
+        eCard Detail
         = simple_form_for :certificate do |f|  #see certificate.js - pages#certificate
           .form-inputs
-            = f.input :acrename, :placeholder => 'NAME YOUR ACRE', :label => false
-            = f.button :submit, 'Download Parcel Certificate', :class=> 'generate_btn'
-  #share
-    %center
-      %br
-      %br
-      #social_media_links
-        .fb-like{"data-font" => "tahoma", "data-href" => "http://www.amazonaid.org/", "data-layout" => "button_count", "data-send" => "true", "data-show-faces" => "false", "data-width" => "450"}
-        %br/
-        %a.twitter-share-button{"data-count" => "horizontal", "data-text" => "Named an acre of Amazon rain forest for protection and conservation", "data-url" => "http://www.amazonaid.org/", "data-via" => "", :href => "https://twitter.com/share"} Tweet
-        %br/
-        %g:plusone
+            = f.input :username, :placeholder => 'YOUR NAME', :label => false, :required=> true
+            = f.input :useremail, :placeholder => 'YOUR EMAIL ADDRESS', :label => false, :required=> true
+            = f.input :acrename, :placeholder => 'ACRE NAME (IN HONOR OF)', :label => false, :required=> false
+            = f.input :recipientemail, :placeholder => 'GIFT RECIPIENT EMAIL ADDRESS', :label => false, :required=> false
+            = f.text_area :personalizedmessage, :placeholder => 'PERSONALIZED MESSAGE', :label => false, :required=> false
+            = f.button :submit, 'Send eCard', :class=> 'generate_btn'
+
 
 
 

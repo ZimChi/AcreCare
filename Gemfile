@@ -7,6 +7,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'mail', '~> 2.4.4'
 gem 'newrelic_rpm'
 gem 'httparty'
 gem 'prawn'

@@ -1,3 +1,5 @@
+ActionMailer::Base.default :from => 'default@development-server.com'
+
 AcreCare::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -13,8 +15,6 @@ AcreCare::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-
-
   # ActionMailer Config
 
   # change to true to allow email to be sent during development
@@ -26,10 +26,12 @@ AcreCare::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
 
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: "coshx.com",
+    domain: "amazonaid.org",
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: ENV["GMAIL_USERNAME"],
