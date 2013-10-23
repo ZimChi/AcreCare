@@ -3,6 +3,7 @@ class ParcelsController < ApplicationController
   # GET /parcels.json
   def index
     @parcels = Parcel.all
+    cookies[:parcel_name] = ''
 
     respond_to do |format|
       format.html # index.html.erb
