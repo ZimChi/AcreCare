@@ -1,0 +1,155 @@
+#donation{
+  #backbutton{
+    margin-right:auto;
+    margin-left:auto;
+    display:block;
+    width: 82px ;
+    padding:5px ;
+  }
+
+  #donate{
+    margin-right:auto;
+    margin-left:auto;
+    display:block;
+    width: 100px ;
+    padding:5px ;
+    }
+
+  #donationlabel{
+    color: #542b00 ;
+    font-size:12px;
+    font-weight:bold;
+    text-align: center;
+    padding-top:10px ;
+    font-family:"PT Sans";
+    display:block;
+  }
+
+  #donationmessage{
+    font-family:"PT Sans";
+    font-size:14px;
+    font-weight:bold;
+    color: #262515;
+    text-align: center;
+    padding-bottom:10px ;
+    max-width:600px ;
+    margin-right:auto;
+    margin-left:auto;
+    font-family:"PT Sans";
+    display:block;
+  }
+
+  #donationform{
+
+    #form{
+     font-size: 15px;
+     padding-right:6px ;
+     padding-left:3px;
+
+     #text{
+       display:block;
+       margin-left:auto;
+       margin-right:auto;
+       color: #542b00;
+       font-weight:bold ;
+     }
+
+     input.generate_btn{
+       display: block;
+       height: 50px;
+       background-color:whitesmoke ;
+       line-height: 40px;
+
+       background: -webkit-linear-gradient(top, #331a00 0%, #542b00 50%, #331a00 100%);
+       background: -moz-linear-gradient(top, #331a00 0%, #542b00 50%, #331a00 100%);
+       background: -ms-linear-gradient(top, #331a00 0%, #542b00 50%, #331a00 100%);
+       background: -o-linear-gradient(top, #331a00 0%, #542b00 50%, #331a00 100%);
+
+       color:#f5f5f5  ;
+       width:101% ;
+       padding-right:0px ;
+       margin-top:10px ;
+       font-family: verdana, arial, helvetica, sans-serif;
+       border-radius: 6px 3px; ;
+       -webkit-border-radius: 6px ;
+       text-decoration: none;
+       font-weight: normal;
+       text-align: center;
+       text-transform: uppercase;
+       cursor: pointer;
+       font-size: 15px;
+
+
+     }
+
+     #donation_acrename, #donation_username, #donation_useremail, #donation_recipientemail, #donation_personalizedmessage{
+       background: -webkit-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
+       background: -moz-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
+       background: -ms-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
+       background: -o-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
+       height:40px ;
+       width:100% ;
+       margin-top:10px ;
+
+       font-family: verdana, arial, helvetica, sans-serif;
+       padding:0px ;
+     }
+     #certificate_personalizedmessage{
+       background: -webkit-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
+       background: -moz-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
+       background: -ms-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
+       background: -o-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
+       height:80px ;
+       width:100% ;
+       margin-top:10px ;
+
+       font-family: verdana, arial, helvetica, sans-serif;
+       padding:0px ;
+     }
+   }
+    .required::-webkit-input-placeholder {
+         color: red  !important ;
+         //font-weight: bold ;
+    }
+
+    .required:-moz-placeholder { /* Firefox 18- */
+       color: red;
+    }
+
+    .required::-moz-placeholder {  /* Firefox 19+ */
+       color: red;
+    }
+
+    .required:-ms-input-placeholder {
+       color: red;
+    }
+
+
+   //add border for larger screens
+   @media (min-width: 480px) {
+      #form{
+
+        overflow-x:hidden ;
+        display: block;
+        margin-left:auto ;
+        margin-right:auto ;
+        width:440px ;
+
+        padding:20px ;
+        margin-top:2% ;
+        margin-bottom:2% ;
+        font-size: 20px;
+
+        border: 2px solid #542b00;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+
+
+        input.generate_btn{
+
+        }
+      }
+    }
+
+  }
+}

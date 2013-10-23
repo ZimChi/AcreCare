@@ -1,1 +1,28 @@
-=image_tag 'donate.png'
+- data_name =  cookies[:parcel_name]
+#donation
+  %p
+  #donationlabel
+    %h1 This Holiday Season, Give the Gift of Wilderness Protection
+  #donationmessage
+    %h3 We will name an acre in the Amazon Rainforest after your loved one
+    %br
+    %br
+    =data_name
+  #donationform
+    #form
+      #text
+        Donation Detail
+        = simple_form_for :donation do |f|  #see certificate.js - pages#certificate
+          .form-inputs
+            = f.input :username, :placeholder => 'YOUR NAME', :label => false, :required=> true
+            = f.input :useremail, :placeholder => 'YOUR EMAIL ADDRESS', :label => false, :required=> true
+            = f.input :acrename, :placeholder => 'ACRE NAME (IN HONOR OF)', :label => false, :required=> false
+            = f.input :recipientemail, :placeholder => 'GIFT RECIPIENT EMAIL ADDRESS', :label => false, :required=> false
+            = f.text_area :personalizedmessage, :placeholder => 'PERSONALIZED MESSAGE', :label => false, :required=> false
+    #donate
+      %script{"data-amount" => "0.01","data-name" => data_name, "data-button" => "donate","data-currency" => "USD","data-env" => "www","data-shipping" => "0","data-tax" => "0",:src => "../paypal-button.min.js?merchant=acrecare@amazonaid.org"}
+      %br
+      %br
+      %br
+    #backbutton
+      =link_to_function "Back", "history.back()", :id=> 'button'

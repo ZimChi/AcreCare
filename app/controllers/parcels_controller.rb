@@ -15,7 +15,9 @@ class ParcelsController < ApplicationController
   def show
     @parcel = Parcel.find(params[:id])
 
-    cookies[:parcel_id] = @parcel.id ;
+    cookies[:parcel_id] = @parcel.id
+    cookies[:parcel_name] = @parcel.title
+
 
     respond_to do |format|
       format.html #{ render :layout => false }

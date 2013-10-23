@@ -1,8 +1,10 @@
 - data_name = "Protect #{@parcel.title}."
 #parcel
-  #donate
-    %script{"data-amount" => "0.01","data-name" => data_name, "data-button" => "donate","data-currency" => "USD","data-env" => "www","data-shipping" => "0","data-tax" => "0",:src => "../paypal-button.min.js?merchant=acrecare@amazonaid.org"}
-    /=link_to_function "Back", "history.back()", :id=> 'button'
+  #backbutton
+    =link_to_function "Back", "history.back()", :id=> 'button'
+    /%script{"data-amount" => "0.01","data-name" => data_name, "data-button" => "donate","data-currency" => "USD","data-env" => "www","data-shipping" => "0","data-tax" => "0",:src => "../paypal-button.min.js?merchant=acrecare@amazonaid.org"}
+  #protectbutton
+    =link_to "Protect", '/donate', :id=> 'button'
 
   #title
     =image_tag "#{@parcel.icon}"

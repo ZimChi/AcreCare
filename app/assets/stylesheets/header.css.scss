@@ -13,20 +13,24 @@ header{
     }
   }
 
-  #info{
+  #info{  //see header.js
     img{
-      height:9%;
       position:absolute;
       top:0.5%;
     }
   }
-  #link_aff {
+  #link_aff {    //see header.js
     img{
-      height:9%;
       position:absolute;
       top:0.5%;
     }
   }
+  #link_gift {      //see header.js
+      img{
+        position:absolute;
+        top:0.5%;
+      }
+    }
 
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#542b00), to(#331a00));   /* Safari 4-5, Chrome 1-9 */
   background: -webkit-linear-gradient(top, #542b00, #331a00);  /* Safari 5.1, Chrome 10+ */
