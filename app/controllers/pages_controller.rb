@@ -2,7 +2,8 @@ class PagesController < ApplicationController
   include PagesHelper
 
   def thanks
-    @parcel = Parcel.find_by_id(cookies[:parcel_id])
+    @donation = Donation.find_by_id(cookies[:donation_id])
+    @parcel = Parcel.find_by_title(@donation.parcel)
   end
 
   def about
@@ -11,8 +12,7 @@ class PagesController < ApplicationController
     end
   end
 
-  #send_data generate_certificate.render, :filename => "AAFCertificate.pdf", :type => "application/pdf"   (download to local)
-  def certificate
+   def ecard
     cookies[:fileDownload] = { :value => true, :path => '/' }
     sender_name = params[:certificate_username]
     sender_email =    params[:certificate_useremail]
@@ -25,6 +25,12 @@ class PagesController < ApplicationController
     CertificateMailer.eCardConfirmation(sender_email).deliver  if !sender_email.nil?
 
     render :nothing => true
+   end
+
+  def certificate
+      cookies[:fileDownload] = { :value => true, :path => '/' }
+      acrename =  params[:certificate_acrename]; acrename.empty? ? acrename = "" : acrename = params[:certificate_acrename].split(' ').map {|w| w.capitalize }.join(' ')
+      send_data generate_certificate(acrename).render, :filename => "AAFCertificate.pdf", :type => "application/pdf"
   end
 
 end

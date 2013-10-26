@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130621204949) do
+ActiveRecord::Schema.define(:version => 20131025002514) do
+
+  create_table "donations", :force => true do |t|
+    t.string   "donor_firstname"
+    t.string   "donor_lastname"
+    t.string   "donor_email"
+    t.string   "acrename"
+    t.string   "gift_sender_name"
+    t.string   "recipient_firstname"
+    t.string   "recipient_lastname"
+    t.string   "recipient_email"
+    t.string   "message"
+    t.string   "parcel"
+    t.string   "gift"
+    t.integer  "numberofacres"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
 
   create_table "parcels", :force => true do |t|
     t.string   "title"

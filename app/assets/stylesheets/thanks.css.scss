@@ -1,5 +1,8 @@
 #thanks{
-  //background-color:#f5f5f5;
+
+  background-image:url('AmazonAidBackground.jpg');
+  background-repeat:repeat-y;
+  background-repeat:repeat-x;
 
     #thankyoumessage{
       font-family:"PT Sans";
@@ -97,7 +100,7 @@
      font-weight:bold ;
    }
 
-   input.generate_btn{
+   input.generate_btn, input.ecard_btn{
      display: block;
      height: 50px;
      background-color:whitesmoke ;

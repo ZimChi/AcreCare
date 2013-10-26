@@ -1,4 +1,13 @@
 #donation{
+
+  background-image:url('AmazonAidBackground.jpg');
+  background-repeat:repeat-y;
+  background-repeat:repeat-x;
+
+  .field_with_errors{
+    font-size:12px ;
+  }
+
   #backbutton{
     margin-right:auto;
     margin-left:auto;
@@ -14,6 +23,7 @@
     width: 100px ;
     padding:5px ;
     }
+
 
   #donationlabel{
     color: #542b00 ;
@@ -53,8 +63,11 @@
        color: #542b00;
        font-weight:bold ;
      }
+     #parcel_name_label{
+       margin-top:10px ;
+     }
 
-     input.generate_btn{
+     input.generate_btn, #nextbutton{
        display: block;
        height: 50px;
        background-color:whitesmoke ;
@@ -82,7 +95,7 @@
 
      }
 
-     #donation_acrename, #donation_username, #donation_useremail, #donation_recipientemail, #donation_personalizedmessage{
+     #donation_acrename, #donation_gift_sender_name, #donation_donor_firstname, #donation_donor_lastname, #donation_donor_email, #donation_recipient_firstname, #donation_recipient_lastname, #donation_recipient_email{
        background: -webkit-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
        background: -moz-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
        background: -ms-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
@@ -90,11 +103,11 @@
        height:40px ;
        width:100% ;
        margin-top:10px ;
-
+       font-size:17px ;
        font-family: verdana, arial, helvetica, sans-serif;
        padding:0px ;
      }
-     #certificate_personalizedmessage{
+     #donation_message{
        background: -webkit-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
        background: -moz-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
        background: -ms-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
@@ -102,10 +115,23 @@
        height:80px ;
        width:100% ;
        margin-top:10px ;
-
+       max-width: 440px ;
+       font-size:17px ;
        font-family: verdana, arial, helvetica, sans-serif;
        padding:0px ;
      }
+     #donation_parcel, #donation_numberofacres{
+        width:100% ;
+        margin-top:10px ;
+        max-width: 440px ;
+        font-size: 19px ;
+        font-family: verdana, arial, helvetica, sans-serif;
+     }
+     #donation_gift{
+       float: right ;
+       margin-right:50px ;
+     }
+
    }
     .required::-webkit-input-placeholder {
          color: red  !important ;

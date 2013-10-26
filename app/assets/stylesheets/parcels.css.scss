@@ -1,8 +1,8 @@
 
 #parcel{
-
-
   background-image:url('AmazonAidBackground.jpg');
+  background-repeat:repeat-y;
+  background-repeat:repeat-x;
 
 
   padding:10px;
@@ -23,10 +23,10 @@
     font-weight: bold ;
   }
 
-  #backbutton, #protectbutton{
+  #backbutton{
+    margin-right:5% ;
+    margin-top:30px ;
     float:right;
-    margin-right:2% ;
-    margin-top:0.5% ;
   }
 
   #title{

@@ -1,0 +1,52 @@
+#show_donation{
+  background-image:url('AmazonAidBackground.jpg');
+  background-repeat:repeat-y;
+  background-repeat:repeat-x;
+
+  #donationconfirmation{
+    font-size: 15px;
+    padding-right:6px ;
+    padding-left:3px;
+
+    #form{
+         font-size: 15px;
+         padding-right:6px ;
+         padding-left:3px;
+
+         #text{
+           display:block;
+           margin-left:auto;
+           margin-right:auto;
+           color: #542b00;
+           font-weight:bold ;
+         }
+    }
+  }
+
+
+  @media (min-width: 480px) {
+        #form{
+
+          overflow-x:hidden ;
+          display: block;
+          margin-left:auto ;
+          margin-right:auto ;
+          width:440px ;
+
+          padding:20px ;
+          margin-top:2% ;
+          margin-bottom:2% ;
+          font-size: 20px;
+
+          border: 2px solid #542b00;
+          border-radius: 6px;
+          -webkit-border-radius: 6px;
+
+
+          input.generate_btn{
+
+          }
+        }
+      }
+
+}

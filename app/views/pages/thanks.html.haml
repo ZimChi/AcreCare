@@ -19,18 +19,59 @@
           %a.twitter-share-button{"data-count" => "horizontal", "data-text" => "Named an acre of Amazon rain forest for protection and conservation", "data-url" => "http://www.amazonaid.org/", "data-via" => "", :href => "https://twitter.com/share"} Tweet
           %g:plusone
 
+
+  -unless @donation.gift == "0"
+    #certificateform
+      #form
+        #text
+          eCard Detail
+          = simple_form_for :certificate do |f|  #see certificate.js - pages#certificate
+            .form-inputs
+              %br
+              %br
+              = 'YOUR EMAIL ADDRESS'
+              = f.input :useremail, :placeholder => 'REQUIRED FOR CONFIRMATION', :input_html => { :value =>  @donation.donor_email}, :label => false, :required=> false
+              %br
+              %br
+              = 'YOUR NAME ON ECARD'
+              = f.input :username, :placeholder => '', :input_html => { :value =>  @donation.donor_firstname}, :label => false, :required=> false
+              %br
+              %br
+              = 'ACRE NAME (IN HONOR OF)'
+              = f.input :acrename, :placeholder => 'NAME THE ACRES YOU HAVE PROTECTED', :input_html => { :value =>  @donation.acrename},:label => false, :required=> false
+              %br
+              %br
+              = 'eCard RECIPIENT EMAIL ADDRESS'
+              = f.input :recipientemail, :placeholder => 'REQUIRED TO SEND ECARD', :input_html => { :value =>  @donation.recipient_email}, :label => false, :required=> false
+              %br
+              %br
+              = 'PERONALIZED MESSAGE FOR ECARD'
+              = f.text_area :personalizedmessage, :placeholder => 'SHORT PERSONALIZED MESSAGE', :label => false, :required=> false
+            = f.button :submit, 'Download Certificate', :class=> 'generate_btn'
+            = f.button :submit, 'Send eCard with Certificate', :class=> 'ecard_btn'
+    #share
+      %center
+        %br
+        #social_media_links
+          .fb-like{"data-font" => "tahoma", "data-href" => "http://www.amazonaid.org/", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
+          %a.twitter-share-button{"data-count" => "horizontal", "data-text" => "Named an acre of Amazon rain forest for protection and conservation", "data-url" => "http://www.amazonaid.org/", "data-via" => "", :href => "https://twitter.com/share"} Tweet
+          %g:plusone
+        %br
+        %br
+        %br
+        %br
+  -else
   #certificateform
     #form
       #text
-        eCard Detail
+        Certificate Detail
         = simple_form_for :certificate do |f|  #see certificate.js - pages#certificate
           .form-inputs
-            = f.input :username, :placeholder => 'YOUR NAME', :label => false, :required=> true
-            = f.input :useremail, :placeholder => 'YOUR EMAIL ADDRESS', :label => false, :required=> true
-            = f.input :acrename, :placeholder => 'ACRE NAME (IN HONOR OF)', :label => false, :required=> false
-            = f.input :recipientemail, :placeholder => 'GIFT RECIPIENT EMAIL ADDRESS', :label => false, :required=> false
-            = f.text_area :personalizedmessage, :placeholder => 'PERSONALIZED MESSAGE', :label => false, :required=> false
-            = f.button :submit, 'Send eCard', :class=> 'generate_btn'
+            %br
+            %br
+            = 'ACRE NAME (IN HONOR OF)'
+            = f.input :acrename, :placeholder => 'NAME THE ACRES YOU HAVE PROTECTED', :input_html => { :value =>  @donation.acrename},:label => false, :required=> false
+            = f.button :submit, 'Download Certificate', :class=> 'generate_btn'
 
 
 
