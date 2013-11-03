@@ -1,11 +1,10 @@
 class DonationsController < ApplicationController
-
+  before_filter :authenticate_admin!, :except => [:new,:edit,:update, :create, :show]
 
   # GET /donations
   # GET /donations.json
   def index
     @donations = Donation.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @donations }
@@ -16,7 +15,7 @@ class DonationsController < ApplicationController
   # GET /donations/1.json
   def show
     @donation = Donation.find(params[:id])
-    cookies[:donation_id] = params[:id] ;
+    cookies[:donation] = params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -47,7 +46,7 @@ class DonationsController < ApplicationController
 
     respond_to do |format|
       if @donation.save
-        format.html { redirect_to @donation, notice: 'Donation was successfully created.' }
+        format.html { redirect_to @donation, notice: '' }
         format.json { render json: @donation, status: :created, location: @donation }
       else
         format.html { render action: "new" }
@@ -63,7 +62,7 @@ class DonationsController < ApplicationController
 
     respond_to do |format|
       if @donation.update_attributes(params[:donation])
-        format.html { redirect_to @donation, notice: 'Donation was successfully updated.' }
+        format.html { redirect_to @donation, notice: '' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

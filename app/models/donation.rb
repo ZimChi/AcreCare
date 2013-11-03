@@ -12,4 +12,6 @@ class Donation < ActiveRecord::Base
                   :recipient_email,
                   :parcel
   validates_presence_of :donor_firstname, :donor_lastname,  :donor_email
+
+
 end

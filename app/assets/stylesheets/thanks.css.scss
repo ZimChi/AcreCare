@@ -128,7 +128,7 @@
 
    }
 
-   #certificate_acrename, #certificate_username, #certificate_useremail, #certificate_recipientemail, #certificate_personalizedmessage{
+   #certificate_acrename, #certificate_username, #certificate_useremail, #certificate_recipientemail,#certificate_recipient_firstname,#certificate_recipient_lastname, #certificate_personalizedmessage{
      background: -webkit-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
      background: -moz-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
      background: -ms-linear-gradient(top, #e7e7e7 0%, #f3f3f3 50%, #e7e7e7 100%);
@@ -136,7 +136,7 @@
      height:40px ;
      width:100% ;
      margin-top:10px ;
-
+     margin-bottom:40px ;
      font-family: verdana, arial, helvetica, sans-serif;
      padding:0px ;
    }

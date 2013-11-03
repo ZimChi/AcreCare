@@ -5,8 +5,8 @@ $(document).ready(function(){
         $('#fade').css({'display' : 'block'});
 
         var dataString = '?&certificate_acrename=' + $('#certificate_acrename').val()
-            +'&certificate_username='+$('#certificate_username').val()
-            +'&certificate_useremail='+$('#certificate_useremail').val()
+            +'&certificate_recipient_firstname='+$('#certificate_recipient_firstname').val()
+            +'&certificate_recipient_lastname='+$('#certificate_recipient_lastname').val()
             +'&certificate_recipientemail='+$('#certificate_recipientemail').val()
             +'&certificate_personalizedmessage='+$('#certificate_personalizedmessage').val()
             + '&authenticity_token='+$('#authenticity-token').attr('content');
@@ -28,12 +28,12 @@ $(document).ready(function(){
         $('#light').css({'display' : 'block'});
         $('#fade').css({'display' : 'block'});
 
-        var dataString = '?&certificate_acrename=' + $('#certificate_acrename').val()
-            +'&certificate_username='+$('#certificate_username').val()
-            +'&certificate_useremail='+$('#certificate_useremail').val()
-            +'&certificate_recipientemail='+$('#certificate_recipientemail').val()
-            +'&certificate_personalizedmessage='+$('#certificate_personalizedmessage').val()
-            + '&authenticity_token='+$('#authenticity-token').attr('content');
+      var dataString = '?&certificate_acrename=' + $('#certificate_acrename').val()
+          +'&certificate_recipient_firstname='+$('#certificate_recipient_firstname').val()
+          +'&certificate_recipient_lastname='+$('#certificate_recipient_lastname').val()
+          +'&certificate_recipientemail='+$('#certificate_recipientemail').val()
+          +'&certificate_personalizedmessage='+$('#certificate_personalizedmessage').val()
+          + '&authenticity_token='+$('#authenticity-token').attr('content');
 
         $.fileDownload('/ecard'+dataString,{
             successCallback: function () {

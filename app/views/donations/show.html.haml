@@ -9,7 +9,7 @@
           %b Your email:
           = @donation.donor_email
           %br
-          %b Donation:
+          %b Pledge:
           = "$#{@donation.numberofacres*50} to protect #{@donation.numberofacres} acre for forty years"
 
           %br
@@ -18,15 +18,13 @@
             ="#{@donation.parcel}"
           %br
           %br
-          -unless @donation.acrename.empty? && @donation.recipient_email.empty?
-            These acres will be named in honor of
-            #{@donation.acrename.split(' ').map {|w| w.capitalize }.join(' ')}
-            and we will confirm certificate and ecard details after proceeding through paypal checkout
-          -else
-            %b Please use paypal to securely make your donation
+          %b Please use paypal to securely make your donation
+
           %br
           %br
           = link_to 'Back', edit_donation_path(@donation)
           %br
           %br
-          %script{"data-amount" => "0.01","data-name" => 'data_name', "data-button" => "donate","data-currency" => "USD","data-env" => "www","data-shipping" => "0","data-tax" => "0",:src => "../paypal-button.min.js?merchant=acrecare@amazonaid.org"}
+          -product = "$#{@donation.numberofacres*50} to protect #{@donation.numberofacres} acres in the Amazon Rainforest for forty years"
+
+          %script{"data-amount" => @donation.numberofacres*50,"data-name" => product, "data-button" => "donate","data-currency" => "USD","data-env" => "www","data-shipping" => "0","data-tax" => "0",:src => "../paypal-button.min.js?merchant=acrecare@amazonaid.org"}

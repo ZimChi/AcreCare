@@ -5,8 +5,15 @@
   </head>
   <body>
 
-  Greetings and congratulations, {Name of Giftee}!
-  {Name of giftor} has used Acre+Care from Amazon Aid Foundation to protect an acre of the Amazon rainforest in your name. A certificate with your name and specific coordinates is attached to this email. We hope you enjoy your gift, knowing that this one acre will be preserved from destruction for 40 years. If you would like to learn more about Amazon Aid Foundation and our mission to preserve the Amazon rainforest, please visit our website at www.amazonaid.org
+  Congratulations <%= @donation.recipient_firstname.capitalize  %>!
+  <br>
+  <br>
+  <%= @donation.donor_firstname.capitalize %> <%= @donation.donor_lastname.capitalize  %> has used Acre+Care from Amazon Aid Foundation to protect <%= @acre_verbiage %> of the Amazon rainforest in your name. A certificate with your name and specific coordinates is attached to this email. We hope you enjoy your gift, knowing that this one acre will be preserved from destruction for 40 years.
+  <br>
+  <br>
+  <br>
+  <br>
+  If you would like to learn more about Amazon Aid Foundation and our mission to preserve the Amazon rainforest, please visit our website at www.amazonaid.org
 
   <%= @messsage %>
   </body>

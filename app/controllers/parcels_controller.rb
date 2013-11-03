@@ -1,9 +1,12 @@
 class ParcelsController < ApplicationController
+  before_filter :authenticate_admin!, :except => [:index,:show]
+
   # GET /parcels
   # GET /parcels.json
   def index
     @parcels = Parcel.all
-    cookies[:parcel_name] = ''
+    cookies[:parcel] = ''
+    cookies[:donation] = ''
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,10 +18,7 @@ class ParcelsController < ApplicationController
   # GET /parcels/1.json
   def show
     @parcel = Parcel.find(params[:id])
-
-    cookies[:parcel_id] = @parcel.id
-    cookies[:parcel_name] = @parcel.title
-
+    cookies[:parcel] = params[:id]
 
     respond_to do |format|
       format.html #{ render :layout => false }

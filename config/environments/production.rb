@@ -20,6 +20,7 @@ AcreCare::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.assets.initialize_on_precompile = false
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
@@ -61,7 +62,7 @@ AcreCare::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { :host => 'amazonaid.org' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp

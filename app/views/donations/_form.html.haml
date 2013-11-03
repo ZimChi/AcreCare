@@ -1,19 +1,21 @@
 %p#notice= notice
 - parcel_name =  cookies[:parcel_name]
+
 #donation
   %p
   #donationlabel
     %h1
   #donationmessage
-    /%h3 Each $50 donation will preserve 1 acre for 40 years
+    %h3 Acre certificate and ecard confirmation details will be handle upon return from paypal after checkout
+    %h3 click here to see example Acre Certificate
+
   #donationform
     #form
       #text
-        Donation Detail
+        /Donation Detail
         - unless parcel_name.nil? || parcel_name.empty?
           #parcel_name_label
             /= parcel_name
-
 
         = simple_form_for @donation, :html => {:validate => 'true'} do |f|  #see certificate.js - pages#certificate
           .form-inputs
@@ -28,19 +30,6 @@
             %br
             %br
             %br
-            =f.hint 'Send Acre Certificate as a Gift?'
-            = f.check_box :gift, :style => "width: 20px; height: 20px;", :checked=>true
-            %br
-            %br
-            %br
-            %br
-            = f.hint 'Gift eCard Detail', :id => 'ecarddetailhint'
-            = f.input :acrename, :placeholder => 'ACRE NAME (NAMED IN HONOR OF)', :label => false, :required=> true
-            = f.input :recipient_email, :placeholder => 'GIFT RECIPIENT EMAIL ADDRESS (FOR ECARD)', :label => false, :required=> true
-            /= f.text_area :message, :placeholder => 'SHORT PERSONALIZED MESSAGE', :label => false, :required=> false, :maxlength => 135
-            = f.input :recipient_firstname, :placeholder => 'GIFT RECIPIENT FIRST NAME', :label => false, :required=> false
-            = f.input :recipient_lastname, :placeholder => 'GIFT RECIPIENT LAST NAME', :label => false, :required=> false
-          .form-actions
             = f.button :submit, 'Next', :id => :nextbutton
         /#donate
         /%script{"data-amount" => "0.01","data-name" => data_name, "data-button" => "donate","data-currency" => "USD","data-env" => "www","data-shipping" => "0","data-tax" => "0",:src => "../paypal-button.min.js?merchant=acrecare@amazonaid.org"}

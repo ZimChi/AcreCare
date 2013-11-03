@@ -2,8 +2,12 @@ class PagesController < ApplicationController
   include PagesHelper
 
   def thanks
-    @donation = Donation.find_by_id(cookies[:donation_id])
-    @parcel = Parcel.find_by_title(@donation.parcel)
+    begin
+      @donation = Donation.find_by_id(cookies[:donation])
+      @parcel = Parcel.find_by_title(@donation.parcel)
+    rescue
+      redirect_to '/'
+    end
   end
 
   def about
@@ -14,23 +18,46 @@ class PagesController < ApplicationController
 
    def ecard
     cookies[:fileDownload] = { :value => true, :path => '/' }
-    sender_name = params[:certificate_username]
-    sender_email =    params[:certificate_useremail]
-    recipient_email = params[:certificate_recipientemail]
-    acrename =  params[:certificate_acrename]; acrename.empty? ? acrename = "Anonymously" : acrename = params[:certificate_acrename].split(' ').map {|w| w.capitalize }.join(' ')
-    message = params[:certificate_personalizedmessage]
-    certificate = generate_certificate(acrename)
 
-    CertificateMailer.eCard(certificate, recipient_email, sender_name, message).deliver  if !recipient_email.nil?
-    CertificateMailer.eCardConfirmation(sender_email).deliver  if !sender_email.nil?
+    @donation = Donation.find_by_id(cookies[:donation])
+    @parcel = Parcel.find_by_id(cookies[:parcel])
+
+    acrename =  params[:certificate_acrename]
+      acrename.empty? ? acrename = "" : acrename = params[:certificate_acrename].split(' ').map {|w| w.capitalize }.join(' ')
+    @donation.acrename = acrename
+    @donation.recipient_firstname = params[:certificate_recipient_firstname]
+    @donation.recipient_lastname = params[:certificate_recipient_lastname]
+    @donation.recipient_email =  params[:certificate_recipientemail]
+    @donation.parcel = @parcel.id
+    @donation.save
+    @donation.numberofacres==1 ? acre_verbiage = 'one acre' : acre_verbiage = "#{@donation.numberofacres} acres"
+    messsage = params[:certificate_personalizedmessage]
+    certificate = generate_certificate(acrename, acre_verbiage, @parcel)
+
+    CertificateMailer.eCard(certificate, @donation, messsage, acre_verbiage).deliver
+
+    #CertificateMailer.eCardConfirmation(sender_email).deliver
 
     render :nothing => true
    end
 
   def certificate
       cookies[:fileDownload] = { :value => true, :path => '/' }
+      @donation = Donation.find_by_id(cookies[:donation])
+      @parcel = Parcel.find_by_id(cookies[:parcel])
+
       acrename =  params[:certificate_acrename]; acrename.empty? ? acrename = "" : acrename = params[:certificate_acrename].split(' ').map {|w| w.capitalize }.join(' ')
-      send_data generate_certificate(acrename).render, :filename => "AAFCertificate.pdf", :type => "application/pdf"
+      @donation.acrename = acrename
+      @donation.recipient_firstname = params[:certificate_recipient_firstname]
+      @donation.recipient_lastname = params[:certificate_recipient_lastname]
+      @donation.recipient_email =  params[:certificate_recipientemail]
+      @donation.parcel = @parcel.id
+      @donation.save
+      @donation.numberofacres==1 ? acre_verbiage = 'one acre' : acre_verbiage = "#{@donation.numberofacres} acres"
+      messsage = params[:certificate_personalizedmessage]
+      certificate = generate_certificate(acrename, acre_verbiage, @parcel)
+
+      send_data certificate.render, :filename => "AAFCertificate.pdf", :type => "application/pdf"
   end
 
 end

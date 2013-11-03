@@ -39,6 +39,7 @@ AcreCare::Application.configure do
       :domain => 'amazonaid.org', # your domain to identify your server when connecting
   }
 
+
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -57,4 +58,6 @@ AcreCare::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.assets.initialize_on_precompile = false
 end
