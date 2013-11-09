@@ -10,11 +10,18 @@
     =link_to "Protect #{@parcel.title}!", '/donations/new', :id=> 'yellowbutton'
   %br
   %br
-  #short_description
-    = "#{@parcel.short_description}"
 
-  #description_top
-    = "#{@parcel.short_description} #{@parcel.description}"
+  #description_content
+    =@parcel.short_description.html_safe
+    =@parcel.description.html_safe
+
+
+  /  #short_description
+  /    = "#{@parcel.short_description}"
+  /
+  /  #description_top
+  /    = "#{@parcel.short_description} #{@parcel.description}"
+
 
 
   #image

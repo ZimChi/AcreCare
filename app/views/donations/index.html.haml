@@ -1,19 +1,20 @@
 %h1 Listing donations
 
 %table
-  - @donations.each do |donation|
-    %tr
-      %td= donation.donor_firstname
-      %td= donation.donor_lastname
-      %td= donation.donor_email
-      %td= donation.acrename
-      %td= donation.donor_firstname
-      %td= donation.donor_lastname
-      %td= donation.donor_email
-      %td= donation.message
-      %td= link_to 'Show', donation
-      %td= link_to 'Edit', edit_donation_path(donation)
-      %td= link_to 'Destroy', donation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %h6
+    - @donations.each do |donation|
+      %tr
+        %td= donation.donor_firstname
+        %td= donation.donor_lastname
+        %td= donation.donor_email
+        %td= donation.acrename
+        %td= donation.donor_firstname
+        %td= donation.donor_lastname
+        %td= donation.donor_email
+        %td= donation.message
+        %td= link_to 'Show', donation
+        %td= link_to 'Edit', edit_donation_path(donation)
+        %td= link_to 'Destroy', donation, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
